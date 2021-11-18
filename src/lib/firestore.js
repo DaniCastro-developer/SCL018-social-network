@@ -16,7 +16,7 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
     // Add a new document with a generated id.
     const docRef = await addDoc(collection(db, 'Post'), {
       userName: auth.currentUser.displayName,
-      photo: auth.currentUser.user.photoURL,
+      photo: auth.currentUser.photoURL,
       artist: artistValue,
       category: categoryValue,
       date: dateValue,

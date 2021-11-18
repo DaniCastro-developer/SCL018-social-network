@@ -2,15 +2,12 @@
 
 import { routes } from './lib/router.js';
 import { authChanged } from './lib/auth.js';
-//import { readData } from './lib/firestore.js';
 
 window.addEventListener('load', () => {
   routes(window.location.hash);
   authChanged();
-  //readData();
 });
 
 window.addEventListener('hashchange', () => {
   routes(window.location.hash);
-  authChanged();
 });

@@ -9,6 +9,7 @@ import {
   sendEmailVerification,
   signInWithPopup,
   onAuthStateChanged,
+  updateProfile,
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js';
 
@@ -18,27 +19,23 @@ import { app } from './firebaseConfig.js';
 export const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 
-/* element profile user
 export const profileInit = (user) => {
   const userInfo = document.querySelector('#userInfo');
-  const userTitle = document.querySelector('#userTitle');
   userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'}
-  <img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >`;
-  userTitle.innerHTML = `<img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >
-   ${user.displayName || 'Usuario'} `;
+  <img id= profilePhoto src=${user.photoURL || '../resources/profile.png'} >`;
   window.location.hash = '#/timeLine';
-}; */
+};
 
 // registrar usuario
-export const userRegister = (email, password) => {
+export const userRegister = (email, password, name) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
       console.log('usuario creado', user);
-      /* updateProfile(auth.currentUser, {
+      updateProfile(auth.currentUser, {
         displayName: name,
-      }); */
+      });
 
       // send email verification
       if (user != null) {
@@ -108,8 +105,7 @@ export const authChanged = () => {
     if (user) {
       const uid = user.uid;
       console.log('usuario logueado', user.displayName);
-      // profileInit(user);
-      // ...
+      profileInit(user);
     } else {
       console.log('user is signed out');
       window.location.hash = '#/login';

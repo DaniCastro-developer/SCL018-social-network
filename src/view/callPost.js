@@ -9,6 +9,7 @@ export const postCallback = (posts) => {
     postUser.innerHTML += `
     <div class='allPost'>
     <div class ='name'>${element.userName}</div>
+    <div class='photo'> <img id= profilePhoto src=${element.photoURL || '../resources/profile.png'} >
      <div class='post'>
       <div class="feedPost"> 
       ${element.artist}

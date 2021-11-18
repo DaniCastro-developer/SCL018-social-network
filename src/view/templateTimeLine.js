@@ -11,8 +11,7 @@ export const timeLine = () => {
   quarterPage.id = 'thirdPage';
 
   const structureWall = ` <header id = 'headerTimeLine'>
-  <img class='logo-timeLine' src='resources/logo.png'> 
-  <nav id= 'userInfo'> </nav> 
+  <nav id= 'userInfo'></nav> 
   <nav id='wallNav'>  
   <span class='nav-bar' id='btnMenu'> <i class= 'fas fa-bars'> </i> Menú </span>
     <nav class='main-nav'>
