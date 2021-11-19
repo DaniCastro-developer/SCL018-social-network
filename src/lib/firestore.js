@@ -10,7 +10,7 @@ import { auth } from '../lib/auth.js';
 
 const db = getFirestore(app);
 
-//Acá se crea el post
+// Acá se crea el post
 export const createPost = async (artistValue, categoryValue, dateValue, descriptionValue, urlValue, locationValue) => {
   try {
     // Add a new document with a generated id.

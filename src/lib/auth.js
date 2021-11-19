@@ -10,6 +10,7 @@ import {
   signInWithPopup,
   onAuthStateChanged,
   updateProfile,
+  sendPasswordResetEmail,
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js';
 
@@ -121,4 +122,15 @@ export const exit = () => {
   }).catch((error) => {
     alert(error);
   });
+};
+
+export const sendPasswordReset = (email) => {
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
 };

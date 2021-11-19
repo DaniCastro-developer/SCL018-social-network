@@ -30,6 +30,8 @@ body {
     margin-right: 10%;
 }
 
+/* timeLine */
+
 #headerTimeLine {
     text-align: center;
     display: flex;
@@ -47,11 +49,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-.title1 {
-    width: 100%;
-}
-
 
 .input {
     width: 261px;
@@ -142,10 +139,6 @@ body {
     width: 24px;
 }
 
-/*.wall-nav {
-    display: flex;
-    justify-content: space-around;
-}*/
 
 .title .userInfo{
     color: rgb(240, 212, 185);
@@ -167,6 +160,25 @@ body {
     border-radius:60px;
 }
 
+/* Page resetPassword */
+.password-logo {
+    width: 35%;
+    display: block;
+    margin: auto;
+}
+
+.iconPassword {
+    width: 10%;
+    display: block;
+    margin: auto;
+}
+
+.resetPasswordForm {
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+}
+
 @media screen and (min-width:630px){
 
     .firstPage {
@@ -178,6 +190,19 @@ body {
     .second-page {
         display: grid;
         grid-template-columns: 50% 50%;
+    }
+
+    .resetPasswordForm {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .container-logo {
+        grid-column-start: 1 ;
+    }
+
+    .container-password {
+        grid-column-start: 2;
     }
 
     head {

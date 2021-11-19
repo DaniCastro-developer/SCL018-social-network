@@ -1,6 +1,7 @@
 import { readData } from '../lib/firestore.js';
-//Función que imprime los post
-//Esta función se llama en el TemplateTimeLine
+// Función que imprime los post
+// Esta función se llama en el TemplateTimeLine
+
 export const postCallback = (posts) => {
   const postMain = document.querySelector('#containerPost');
   postMain.innerHTML = '';
