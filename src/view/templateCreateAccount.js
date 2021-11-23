@@ -4,15 +4,8 @@ export const createAccount = () => {
   const secondPage = document.createElement('div');
   secondPage.className = 'second-page';
   secondPage.id = 'secondPage';
-
-  // header
-  const header = document.createElement('header');
-  secondPage.appendChild(header);
-
-  const logo = document.createElement('img');
-  logo.className = 'title1';
-  logo.src = 'resources/logo.png';
-  header.appendChild(logo);
+  secondPage.innerHTML = `<header> <img src='resources/logo.png' class = 'title1'>
+   <p class='slogan'> El punto de encuentro de tus conciertos </p> </header>`;
 
   // section 2 - Página para crear cuenta
   const section2 = document.createElement('section');

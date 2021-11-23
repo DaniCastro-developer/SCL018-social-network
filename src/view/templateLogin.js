@@ -1,19 +1,12 @@
-import { userLogin, loginWithGoogle, sendPasswordReset } from '../lib/auth.js';
+import { userLogin, loginWithGoogle } from '../lib/auth.js';
 
 export const homeLogin = () => {
   // container principal
   const firstPage = document.createElement('div');
   firstPage.className = 'firstPage';
   firstPage.id = 'container';
-
-  // header
-  const header = document.createElement('header');
-  firstPage.appendChild(header);
-
-  const logo = document.createElement('img');
-  logo.className = 'title1';
-  logo.src = 'resources/logo.png';
-  header.appendChild(logo);
+  firstPage.innerHTML = `<header> <img src='resources/logo.png' class = 'title1'>
+  <p class='slogan'> El punto de encuentro de tus conciertos </p> </header>`;
 
   // section 1 - Página de login
   const section1 = document.createElement('section');
