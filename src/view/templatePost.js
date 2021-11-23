@@ -15,19 +15,20 @@ export const post = () => {
   logo.src = 'resources/logo.png';
   header.appendChild(logo);
 
-  const closePost = document.createElement('img');
-  closePost.id = 'close-post';
-  closePost.src = 'resources/close.png';
-  header.appendChild(closePost);
-
   // nav
   const nav = document.createElement('nav');
+  nav.className = 'nav-post';
   thirdPage.appendChild(nav);
 
   const text = document.createElement('span');
-  text.className = 'title';
-  text.innerHTML = '<h1> Publicar </h1>';
+  text.className = 'title-templete';
+  text.innerHTML = '<h1> Comparte tu concierto </h1>';
   nav.appendChild(text);
+
+  const closePost = document.createElement('img');
+  closePost.id = 'close-post';
+  closePost.src = 'resources/close.png';
+  nav.appendChild(closePost);
 
   // section 3 - Página para crear un publicación
   const section3 = document.createElement('section');
@@ -59,7 +60,7 @@ export const post = () => {
   });
 
   // salir de la opción publicar
-  const exitPost = header.querySelector('#close-post');
+  const exitPost = nav.querySelector('#close-post');
   exitPost.addEventListener('click', () => {
     window.location.hash = '#/timeLine';
   });

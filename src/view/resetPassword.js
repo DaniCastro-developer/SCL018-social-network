@@ -1,5 +1,4 @@
 import { sendPasswordReset } from '../lib/auth.js';
-// import { sendPasswordResetEmailModal, userNotRegisterModal } from '../lib/modal.js';
 
 const resetPasswordFirebase = (container) => {
   const resetBtn = container.querySelector('#resetPasswordButton');

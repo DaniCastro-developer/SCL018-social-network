@@ -2,23 +2,23 @@ import { readData } from '../lib/firestore.js';
 // Función que imprime los post
 // Esta función se llama en el TemplateTimeLine
 
+// falta la hora :O
 export const postCallback = (posts) => {
   const postMain = document.querySelector('#containerPost');
   postMain.innerHTML = '';
   const postContent = (element) => {
     const postUser = document.createElement('div');
+    postUser.id = 'allPost';
     postUser.innerHTML += `
-    <div class='allPost'>
-    <div class ='name'>${element.userName}</div>
-    <div class='photo'> <img id= profilePhoto src=${element.photoURL || '../resources/profile.png'} >
+    <div class ='user-post'> <img id= profilePhoto src=${element.photoURL || '../resources/profile.png'} > <p class= name-user> ${element.userName} </p> 
+    <img class= img-options src='../resources/options.png'> </div>
      <div class='post'>
       <div class="feedPost"> 
-      ${element.artist}
-      ${element.category}
-      ${element.date}
-      ${element.description}
-      ${element.links}
-      ${element.location}
+      <p> ${element.artist} </p>
+      <p> ${element.category} </p>
+      <p> ${element.date} - ${element.location} </p>
+      <p> ${element.links} </p>
+      <p> ${element.description} </p>
       </div>
      </div>
      <div class='reactions'>
@@ -26,7 +26,7 @@ export const postCallback = (posts) => {
         <img class='img' src='./resources/like.png'> 
         </div>
         <div class='btnRecom'>
-        <img class='img' src='./resources/comment.png'>
+        <img class='img-comment' src='./resources/comment.png'>
         </div>
      </div>
     </div>

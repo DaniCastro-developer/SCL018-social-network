@@ -1,5 +1,5 @@
 import { homeLogin } from '../view/templateLogin.js';
-import { createCount } from '../view/templateCreateCount.js';
+import { createAccount } from '../view/templateCreateAccount.js';
 import { post } from '../view/templatePost.js';
 import { timeLine } from '../view/templateTimeLine.js';
 import { resetPassword } from '../view/resetPassword.js';
@@ -12,7 +12,7 @@ export const routes = (hash) => {
   } else if (hash === '#/login') {
     rootContainer.appendChild(homeLogin());
   } else if (hash === '#/account') {
-    rootContainer.appendChild(createCount());
+    rootContainer.appendChild(createAccount());
   } else if (hash === '#/timeLine') {
     rootContainer.appendChild(timeLine());
   } else if (hash === '#/post') {

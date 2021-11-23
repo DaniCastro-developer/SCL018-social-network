@@ -34,7 +34,7 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
 
 // Función para leer data de la colección de Firebase
 export const readData = (nameCollection, callback) => {
-  const q = query(collection(db, nameCollection), orderBy('datePost', 'desc'));
+  const q = query(collection(db, nameCollection), orderBy('datePost', 'asc'));
   onSnapshot(q, (querySnapshot) => {
     const posts = [];
     querySnapshot.forEach((doc) => {

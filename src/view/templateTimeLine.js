@@ -27,7 +27,8 @@ export const timeLine = () => {
         </ul>
       </nav>
       </header> 
-      <section id= 'post'> <a href='#/post'> <button id="btnPublish"> <img src = 'resources/post.png'> </button> </a> </section>
+      <section id= 'post'> <a href='#/post'> <button id="btnPublish"> <img src = 'resources/post.png' class= 'icon-post'> </button> </a> </section>
+      <h1 class= 'title-templete'> Publicaciones </h1> 
       <main id='containerPost'> </main>`;
 
   quarterPage.innerHTML = structureWall;

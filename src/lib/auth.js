@@ -66,9 +66,13 @@ export const userLogin = (email1, password1) => {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      window.location.hash = '#/timeLine';
-    })
-    .catch((error) => {
+      if (user && user.emailVerified === true) {
+        window.location.hash = '#/timeLine';
+      } else {
+        alert('Recuerda validar tu correo.');
+        window.location.hash = '#/login';
+      }
+    }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorMessage);
@@ -124,6 +128,7 @@ export const exit = () => {
   });
 };
 
+// función para cambiar contraseña olvidada
 export const sendPasswordReset = (email) => {
   sendPasswordResetEmail(auth, email)
     .then(() => {

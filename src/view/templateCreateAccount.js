@@ -1,6 +1,6 @@
 import { userRegister } from '../lib/auth.js';
 
-export const createCount = () => {
+export const createAccount = () => {
   const secondPage = document.createElement('div');
   secondPage.className = 'second-page';
   secondPage.id = 'secondPage';
@@ -16,8 +16,8 @@ export const createCount = () => {
 
   // section 2 - Página para crear cuenta
   const section2 = document.createElement('section');
-  section2.className = 'createCount';
-  section2.id = 'createCount';
+  section2.className = 'create-Account';
+  section2.id = 'createAccount';
   section2.innerHTML = `<input type='text' id='createName' class = 'input' placeholder='Nombre de usuario'/>
       <input type='email' id='mailRegister' class = 'input'  placeholder='Email' />
       <input type='password' id='passwordRegister' class = 'input' placeholder='password' value='password'/>
