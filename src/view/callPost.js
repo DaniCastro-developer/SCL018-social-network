@@ -1,6 +1,6 @@
-import { readData, deletePost } from '../lib/firestore.js';
+import { readData, deletePost, editPost } from '../lib/firestore.js';
 import { auth } from '../lib/auth.js';
-import { editTemplete } from '../view/editPost.js';
+// import { editTemplete } from '../view/editPost.js';
 // Función que imprime los post
 // Esta función se llama en el TemplateTimeLine
 
@@ -15,7 +15,7 @@ export const postCallback = (posts) => {
     
      <div class='post' id='${element.id}'>
       <div class="feedPost"> 
-      <p> ${element.artist} </p>
+      <p class= "artist"> ${element.artist} </p>
       <p> ${element.category} </p>
       <p> ${element.date} - ${element.location} </p>
       <p> ${element.links} </p>
@@ -34,7 +34,7 @@ export const postCallback = (posts) => {
 
     if (element.userId === auth.currentUser.uid) {
       postUser.innerHTML += `<button class="btn-Edit" value=${element.id}> Editar </button> 
-      <button class="btn-Delete" id="btn-delete" value=${element.id}> Eliminar </button>`;
+      <button class="btn-Delete" id="btn-delete" value=${element.id} > Eliminar </button>`;
     }
     postMain.appendChild(postUser);
   };
@@ -49,11 +49,12 @@ export const postCallback = (posts) => {
   const btnEditar = postMain.querySelectorAll('.btn-Edit');
   btnEditar.forEach((item) => {
     item.addEventListener('click', () => {
-      console.log(item.value);
-      editTemplete(item.value);
-      window.location.hash = '#/editPost';
+      console.log(btnEditar);
+      btnEditar.textContent = 'Guardar';
+      // item.addEventListener('click', () => editPost(item.value));
     });
   });
+
   return postMain;
 };
 
