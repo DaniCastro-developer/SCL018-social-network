@@ -7,6 +7,7 @@ import {
   deleteDoc,
   doc,
   orderBy,
+  updateDoc,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
 import { app } from '../lib/firebaseConfig.js';
 import { auth } from '../lib/auth.js';
@@ -28,6 +29,7 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
       links: urlValue,
       location: locationValue,
       datePost: Date(Date.now()),
+      like: [],
     });
     console.log('Document written with ID: ', docRef);
     return docRef;
@@ -57,18 +59,15 @@ export const deletePost = async (postId) => {
   }
 };
 
-/* export const editarPost = (idPostEdit, currentText) => {
-  const post = prompt('Ingresa el nuevo texto', currentText);
-  if (post.trim().length === 0) {
-    alert('Completa el campo solicitado');
-  }
-  return db.collection('Post').doc(idPostEdit).update({
-    post,
-  })
-    .then(() => {
-      console.log('¡Documento actualizado con éxito!');
-    })
-    .catch((error) => {
-      console.error('Error al actualizar el documento: ', error);
-    });
-}; */
+// función editar documento
+export const editPost = async (idPost, artsValue, cateValue, dateValue, descripValue, urlValue, locationValue) => {
+  const washingtonRef = doc(db, 'Post', idPost);
+  await updateDoc(doc(washingtonRef, {
+    artist: artsValue,
+    category: cateValue,
+    date: dateValue,
+    description: descripValue,
+    links: urlValue,
+    location: locationValue,
+  }));
+};

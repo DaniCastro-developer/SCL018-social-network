@@ -3,6 +3,7 @@ import { createAccount } from '../view/templateCreateAccount.js';
 import { post } from '../view/templatePost.js';
 import { timeLine } from '../view/templateTimeLine.js';
 import { resetPassword } from '../view/resetPassword.js';
+import { editTemplete } from '../view/editPost.js';
 
 export const routes = (hash) => {
   const rootContainer = document.getElementById('root');
@@ -19,5 +20,7 @@ export const routes = (hash) => {
     rootContainer.appendChild(post());
   } else if (hash === '#/resetPassword') {
     rootContainer.appendChild(resetPassword());
+  } else if (hash === '#/editPost') {
+    rootContainer.appendChild((editTemplete()));
   }
 };
