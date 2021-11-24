@@ -106,6 +106,15 @@ export const loginWithGoogle = () => {
     });
 };
 
+// cerrar sesión
+export const exit = () => {
+  signOut(auth).then(() => {
+    window.location.hash = '#/login';
+  }).catch((error) => {
+    alert(error);
+  });
+};
+
 //  auth changed
 export const authChanged = () => {
   onAuthStateChanged(auth, (user) => {
@@ -113,20 +122,13 @@ export const authChanged = () => {
       const uid = user.uid;
       console.log('usuario logueado', user.displayName);
       profileInit(user);
-    } else {
-      console.log('user is signed out');
-      window.location.hash = '#/login';
+    } else if (!user) {
+      if (window.location.hash !== '#/account') {
+        exit();
+      } else {
+        console.log('usuario debe crear una cuenta');
+      }
     }
-  });
-};
-
-// cerrar sesión
-export const exit = () => {
-  signOut(auth).then(() => {
-    window.location.hash = '#/login';
-    alert('Sesión cerrada con éxito, vuelve pronto');
-  }).catch((error) => {
-    alert(error);
   });
 };
 

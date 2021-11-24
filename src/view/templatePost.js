@@ -33,8 +33,12 @@ export const post = () => {
     const descriptionValue = thirdPage.querySelector('#description').value;
     const urlValue = thirdPage.querySelector('#links').value;
     const locationValue = thirdPage.querySelector('#location').value;
-    createPost(artistValue, categoryValue, dateValue, descriptionValue, urlValue, locationValue);
-    window.location.hash = '#/timeLine';
+    if (artistValue === '' || categoryValue === '' || dateValue === '' || descriptionValue === '' || urlValue === '' || locationValue === '') {
+      alert('recuerda llenar todos los campos');
+    } else {
+      createPost(artistValue, categoryValue, dateValue, descriptionValue, urlValue, locationValue);
+      window.location.hash = '#/timeLine';
+    }
   });
 
   // salir de la opción publicar

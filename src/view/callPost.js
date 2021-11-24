@@ -11,11 +11,11 @@ export const postCallback = (posts) => {
     const postUser = document.createElement('div');
     postUser.className = 'allPost';
     postUser.innerHTML += `
-    <div class ='user'> ${element.userName} <div class='userOptions'> </div> </div>
+    <div class ='user'> ${element.userName} ${element.datePost} <div class='userOptions'> </div> </div>
     
      <div class='post' id='${element.id}'>
       <div class="feedPost"> 
-      <p class= "artist"> ${element.artist} </p>
+      <textarea readonly class= "artist"> ${element.artist} </textarea>
       <p> ${element.category} </p>
       <p> ${element.date} - ${element.location} </p>
       <p> ${element.links} </p>
@@ -34,7 +34,8 @@ export const postCallback = (posts) => {
 
     if (element.userId === auth.currentUser.uid) {
       postUser.innerHTML += `<button class="btn-Edit" value=${element.id}> Editar </button> 
-      <button class="btn-Delete" id="btn-delete" value=${element.id} > Eliminar </button>`;
+      <button class="btn-Delete" id="btn-delete" value=${element.id} > Eliminar </button>
+      <button class="btn-save" id="btn-save" value=${element.id} > Guarda </button>`;
     }
     postMain.appendChild(postUser);
   };
@@ -43,14 +44,15 @@ export const postCallback = (posts) => {
   // se llama a función para borrar publicación
   const btnDeleteList = postMain.querySelectorAll('.btn-Delete');
   btnDeleteList.forEach((item) => {
-    item.addEventListener('click', () => deletePost(item.value));
+    const idPost = item.value;
+    item.addEventListener('click', () => deletePost(idPost));
   });
 
-  const btnEditar = postMain.querySelectorAll('.btn-Edit');
-  btnEditar.forEach((item) => {
+  const btnEdit = postMain.querySelectorAll('.btn-Edit');
+  btnEdit.forEach((item) => {
     item.addEventListener('click', () => {
-      console.log(btnEditar);
-      btnEditar.textContent = 'Guardar';
+      console.log(btnEdit);
+      btnEdit.classList.toggle('.btn-Delete.active');
       // item.addEventListener('click', () => editPost(item.value));
     });
   });

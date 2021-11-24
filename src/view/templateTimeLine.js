@@ -37,6 +37,7 @@ export const timeLine = () => {
   const logOut = quarterPage.querySelector('#logOut');
   logOut.addEventListener('click', () => {
     exit();
+    alert('Sesión cerrada con éxito, vuelve pronto');
   });
 
   readData('Post', postCallback);

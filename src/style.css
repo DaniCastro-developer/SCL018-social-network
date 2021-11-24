@@ -30,6 +30,20 @@ body {
     margin-right: 10%;
 }
 
+/* createPost */
+
+.btn-save {
+    display: none;
+}
+
+.btn-save.active {
+    display: block;
+}
+
+.btn-Delete.active {
+    display: none;
+}
+
 /* Post */
 
 .close-post{
