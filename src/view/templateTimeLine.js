@@ -5,13 +5,13 @@ import { postCallback } from '../view/callPost.js'
 import { showPost } from '../view/callPost.js';
 
 export const timeLine = () => {
-  const containerRoot = document.querySelector('#root');
   const quarterPage = document.createElement('div');
   quarterPage.className = 'third-page';
   quarterPage.id = 'thirdPage';
 
-  const structureWall = ` <header id = 'headerTimeLine'>
-  <nav id= 'userInfo'></nav> 
+  quarterPage.innerHTML = ` <header id = 'headerTimeLine'>
+  <img class='logo-timeLine' src='resources/logo.png'> 
+  <nav id= 'userInfo'> </nav> 
   <nav id='wallNav'>  
   <span class='nav-bar' id='btnMenu'> <i class= 'fas fa-bars'> </i> Menú </span>
     <nav class='main-nav'>
@@ -27,17 +27,18 @@ export const timeLine = () => {
         </ul>
       </nav>
       </header> 
-      <section id= 'post'> <a href='#/post'> <button id="btnPublish"> <img src = 'resources/post.png' class= 'icon-post'> </button> </a> </section>
-      <h1 class= 'title-templete'> Publicaciones </h1> 
-      <main id='containerPost'> </main>`;
+      <section id= 'post'> <a href='#/post'> <button id="btnPublish"> <img src = 'resources/post.png' class='publish-btn'> </button> </a>
+      <main id='containerPost'> </main>
+       </section>
+      `;
 
-  quarterPage.innerHTML = structureWall;
-  containerRoot.appendChild(quarterPage);
   showPost();
+
   const logOut = quarterPage.querySelector('#logOut');
   logOut.addEventListener('click', () => {
     exit();
   });
+
   readData('Post', postCallback);
   return quarterPage;
 };

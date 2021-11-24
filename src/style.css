@@ -162,11 +162,10 @@ body {
     border: none;
 }
 
-.icon-post {
+.publish-btn{
     width: 20%;
     margin-left: 70%;
 }
-
 
 .title .userInfo{
     color: rgb(240, 212, 185);
@@ -188,7 +187,6 @@ body {
     border-radius:60px;
 }
 
-
 /* container Post */
 
 #containerPost {
@@ -197,7 +195,7 @@ body {
     align-items: center;
 }
 
-#allPost {
+.allPost {
     background-color: white;
     color: rgba(0, 0, 0, 0.56);
     margin: 25px;

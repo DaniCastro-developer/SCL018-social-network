@@ -4,7 +4,10 @@ import {
   getFirestore,
   query,
   onSnapshot,
-  orderBy } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
+  deleteDoc,
+  doc,
+  orderBy,
+} from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
 import { app } from '../lib/firebaseConfig.js';
 import { auth } from '../lib/auth.js';
 
@@ -17,6 +20,7 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
     const docRef = await addDoc(collection(db, 'Post'), {
       userName: auth.currentUser.displayName,
       photo: auth.currentUser.photoURL,
+      userId: auth.currentUser.uid,
       artist: artistValue,
       category: categoryValue,
       date: dateValue,
@@ -38,10 +42,33 @@ export const readData = (nameCollection, callback) => {
   onSnapshot(q, (querySnapshot) => {
     const posts = [];
     querySnapshot.forEach((doc) => {
-      posts.push(doc.data());
-      console.log(doc);
+      posts.push({ ...doc.data(), id: doc.id });
     });
     callback(posts);
-    console.log(posts);
   });
 };
+
+// función para borrar publicación
+export const deletePost = async (postId) => {
+  console.log(postId);
+  const confirm = window.confirm('¿Quieres eliminar esta publicación?');
+  if (confirm) {
+    await deleteDoc(doc(db, 'Post', postId));
+  }
+};
+
+/* export const editarPost = (idPostEdit, currentText) => {
+  const post = prompt('Ingresa el nuevo texto', currentText);
+  if (post.trim().length === 0) {
+    alert('Completa el campo solicitado');
+  }
+  return db.collection('Post').doc(idPostEdit).update({
+    post,
+  })
+    .then(() => {
+      console.log('¡Documento actualizado con éxito!');
+    })
+    .catch((error) => {
+      console.error('Error al actualizar el documento: ', error);
+    });
+}; */

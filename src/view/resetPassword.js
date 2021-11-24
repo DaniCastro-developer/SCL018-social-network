@@ -1,9 +1,10 @@
 import { sendPasswordReset } from '../lib/auth.js';
 
-const resetPasswordFirebase = (container) => {
+// Conexión con template
+// Se llama a la función que envía el correo para resetear
+export const resetPasswordFirebase = (container) => {
   const resetBtn = container.querySelector('#resetPasswordButton');
-  resetBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+  resetBtn.addEventListener('click', () => {
     const email = container.querySelector('#resetEmail');
     if (email.value !== '') {
       sendPasswordReset(email.value);
@@ -13,6 +14,7 @@ const resetPasswordFirebase = (container) => {
   });
 };
 
+// Template para resetear contraseña
 export const resetPassword = () => {
   const container = document.createElement('section');
   container.classList.add('resetPasswordContainer');

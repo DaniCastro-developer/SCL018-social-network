@@ -1,18 +1,19 @@
-import { readData } from '../lib/firestore.js';
+import { readData, deletePost } from '../lib/firestore.js';
+import { auth } from '../lib/auth.js';
+
 // Función que imprime los post
 // Esta función se llama en el TemplateTimeLine
 
-// falta la hora :O
 export const postCallback = (posts) => {
   const postMain = document.querySelector('#containerPost');
   postMain.innerHTML = '';
   const postContent = (element) => {
     const postUser = document.createElement('div');
-    postUser.id = 'allPost';
+    postUser.className = 'allPost';
     postUser.innerHTML += `
-    <div class ='user-post'> <img id= profilePhoto src=${element.photoURL || '../resources/profile.png'} > <p class= name-user> ${element.userName} </p> 
-    <img class= img-options src='../resources/options.png'> </div>
-     <div class='post'>
+    <div class ='user'> ${element.userName} <div class='userOptions'> </div> </div>
+    
+     <div class='post' id='${element.id}'>
       <div class="feedPost"> 
       <p> ${element.artist} </p>
       <p> ${element.category} </p>
@@ -23,19 +24,38 @@ export const postCallback = (posts) => {
      </div>
      <div class='reactions'>
        <div class='btnLike'>
-        <img class='img' src='./resources/like.png'> 
+        <img class='img' src='./resources/like.png'> <div class="likesCount"></div>
         </div>
         <div class='btnRecom'>
         <img class='img-comment' src='./resources/comment.png'>
         </div>
      </div>
-    </div>
-    `;
+    </div>`;
+
+    if (element.userId === auth.currentUser.uid) {
+      postUser.innerHTML += `<button class="btn-Edit" value=${element.id}> Editar </button> 
+      <button class="btn-Delete" id="btn-delete" value=${element.id}> Eliminar </button>`;
+    }
     postMain.appendChild(postUser);
   };
   posts.forEach(postContent);
+
+  // se llama a función para borrar publicación
+  const btnDeleteList = postMain.querySelectorAll('.btn-Delete');
+  btnDeleteList.forEach((item) => {
+    console.log(item.value);
+    item.addEventListener('click', () => deletePost(item.value));
+  });
+
+  /* const btnEditar = postMain.querySelectorAll('.btn-Edit');
+  btnEditar.forEach((item) => {
+    const currentText = (item.dataset.post);
+    item.addEventListener('click', () => editarPost(item.value, currentText));
+  }); */
+
   return postMain;
 };
+
 export const showPost = () => {
   readData('Post', postCallback);
 };

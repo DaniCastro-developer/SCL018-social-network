@@ -9,8 +9,8 @@ import {
   sendEmailVerification,
   signInWithPopup,
   onAuthStateChanged,
-  updateProfile,
   sendPasswordResetEmail,
+  updateProfile,
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js';
 
@@ -43,7 +43,7 @@ export const userRegister = (email, password, name) => {
         sendEmailVerification(auth.currentUser)
           .then(() => {
             console.log('correo enviado');
-            alert('Hemos enviado un correo de verificación para validar tu cuenta');
+            alert('Hemos enviado un correo de verificación para validar tu cuenta.');
             window.location.hash = '#/login';
           })
           .catch((error) => {
@@ -68,11 +68,13 @@ export const userLogin = (email1, password1) => {
       const user = userCredential.user;
       if (user && user.emailVerified === true) {
         window.location.hash = '#/timeLine';
-      } else {
+      }
+      else {
         alert('Recuerda validar tu correo.');
         window.location.hash = '#/login';
       }
-    }).catch((error) => {
+    })
+    .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorMessage);
@@ -128,7 +130,7 @@ export const exit = () => {
   });
 };
 
-// función para cambiar contraseña olvidada
+// Función para cambiar contraseña olvidada
 export const sendPasswordReset = (email) => {
   sendPasswordResetEmail(auth, email)
     .then(() => {
