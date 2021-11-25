@@ -60,15 +60,23 @@ export const deletePost = async (postId) => {
 };
 
 // función editar documento
-export const editPost = async (idPost, artsValue, cateValue, dateValue, descripValue, urlValue, locationValue) => {
-  const washingtonRef = doc(db, 'Post', idPost);
-  await updateDoc(doc(washingtonRef, {
+export const editPost = async (idPost, artsValue) => {
+  const collectionRef = doc(db, 'Post', idPost);
+  await updateDoc(collectionRef, {
     artist: artsValue,
-    category: cateValue,
-    date: dateValue,
-    description: descripValue,
-    links: urlValue,
-    location: locationValue,
-  }));
-  window.location.reload();
+  });
 };
+
+/*  cateValue, dateValue, descripValue, urlValue, locationValue
+category: cateValue,
+date: dateValue,
+description: descripValue,
+links: urlValue,
+location: locationValue, */
+
+/* export const editPost = async (idPost, artsValue) => {
+  const postRef = doc(db, 'publicaciones', idPost);
+  await updateDoc(postRef, {
+    artist: artsValue,
+  });
+}; */

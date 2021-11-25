@@ -160,15 +160,17 @@ body {
 #btnPublish{
     position: fixed;
     bottom: 30px;
-    right: 20px;
+    right: 80px;
     margin-bottom: 10%;
     background-color: transparent;
     border: none;
 }
 
 .publish-btn{
-    width: 20%;
-    margin-left: 70%;
+    /* position: fixed; */
+    left: 890px;
+    top: 715px;
+    height: 64px;
 }
 
 .title .userInfo{
@@ -262,6 +264,25 @@ body {
     display: flex;
     flex-direction: column;
     text-align:center;
+}
+
+/* editar post */
+.btn-save{
+    display: none;
+}
+
+textarea {
+    border: none;
+    font-family: 'Arimo', sans-serif;
+    color: rgba(0, 0, 0, 0.56);
+    padding: 10px;
+    font-size: medium;
+}
+
+textarea.active {
+    border: salmon;
+    border-color: salmon;
+    background-color: seagreen;
 }
 
 /* media computador */ 

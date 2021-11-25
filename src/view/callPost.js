@@ -1,9 +1,8 @@
 import { readData, deletePost, editPost } from '../lib/firestore.js';
 import { auth } from '../lib/auth.js';
-// import { editTemplete } from '../view/editPost.js';
+
 // Función que imprime los post
 // Esta función se llama en el TemplateTimeLine
-
 export const postCallback = (posts) => {
   const postMain = document.querySelector('#containerPost');
   postMain.innerHTML = '';
@@ -35,7 +34,7 @@ export const postCallback = (posts) => {
     if (element.userId === auth.currentUser.uid) {
       postUser.innerHTML += `<button class="btn-Edit" value=${element.id} > Editar </button> 
       <button class="btn-Delete" id="btn-delete" value=${element.id} > Eliminar </button>
-      <button class="btn-save" id="btn-save" style="display: none" value=${element.id} > Guardar </button>`;
+      <button class="btn-save" id="btn-save" value=${element.id} > Guardar </button>`;
     }
     postMain.appendChild(postUser);
   };
@@ -51,20 +50,26 @@ export const postCallback = (posts) => {
   const btnEdit = postMain.querySelectorAll('.btn-Edit');
 
   btnEdit.forEach((item) => {
-    item.addEventListener('click', () => {
-      const idPost = item.value;
-      const btnSave = postMain.querySelector('#btn-save');
-      const artistInp = postMain.querySelector('.artist');
-      console.log(btnSave);
+    item.addEventListener('click', (e) => {
+      const dataBtn = e.target.parentElement;
       item.style.display = 'none';
-      btnSave.style.display = 'hidden';
-      artistInp.removeAttribute('readonly');
-
+      const btnSave = dataBtn.lastChild;
+      btnSave.style.display = 'inline';
+      const feedPost = dataBtn.childNodes[3].childNodes[1];
+      feedPost.firstChild.nextSibling.removeAttribute('readonly');
+      feedPost.firstChild.nextSibling.style.color = 'salmon';
       btnSave.addEventListener('click', () => {
-        item.style.display = 'hidden';
+        item.style.display = 'inline';
+        btnSave.style.display = 'none';
+        const idPost = item.value;
+        const artsValue = feedPost.firstChild.nextSibling.value;
+        console.log(artsValue, idPost);
+
+        editPost(idPost, artsValue);
       });
-      // editPost(idPost, artsValue, cateValue, dateValue, descripValue, urlValue, locationValue));
     });
+      // editPost(idPost, artsValue, cateValue, dateValue, descripValue, urlValue, locationValue));
+    /* }); */
   });
 
   return postMain;
