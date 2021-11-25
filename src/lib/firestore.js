@@ -70,4 +70,5 @@ export const editPost = async (idPost, artsValue, cateValue, dateValue, descripV
     links: urlValue,
     location: locationValue,
   }));
+  window.location.reload();
 };

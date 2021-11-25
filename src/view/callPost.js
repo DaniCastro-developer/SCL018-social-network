@@ -33,9 +33,9 @@ export const postCallback = (posts) => {
     </div>`;
 
     if (element.userId === auth.currentUser.uid) {
-      postUser.innerHTML += `<button class="btn-Edit" value=${element.id}> Editar </button> 
+      postUser.innerHTML += `<button class="btn-Edit" value=${element.id} > Editar </button> 
       <button class="btn-Delete" id="btn-delete" value=${element.id} > Eliminar </button>
-      <button class="btn-save" id="btn-save" value=${element.id} > Guarda </button>`;
+      <button class="btn-save" id="btn-save" style="display: none" value=${element.id} > Guardar </button>`;
     }
     postMain.appendChild(postUser);
   };
@@ -49,11 +49,21 @@ export const postCallback = (posts) => {
   });
 
   const btnEdit = postMain.querySelectorAll('.btn-Edit');
+
   btnEdit.forEach((item) => {
     item.addEventListener('click', () => {
-      console.log(btnEdit);
-      btnEdit.classList.toggle('.btn-Delete.active');
-      // item.addEventListener('click', () => editPost(item.value));
+      const idPost = item.value;
+      const btnSave = postMain.querySelector('#btn-save');
+      const artistInp = postMain.querySelector('.artist');
+      console.log(btnSave);
+      item.style.display = 'none';
+      btnSave.style.display = 'hidden';
+      artistInp.removeAttribute('readonly');
+
+      btnSave.addEventListener('click', () => {
+        item.style.display = 'hidden';
+      });
+      // editPost(idPost, artsValue, cateValue, dateValue, descripValue, urlValue, locationValue));
     });
   });
 

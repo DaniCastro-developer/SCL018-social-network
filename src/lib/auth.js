@@ -68,8 +68,7 @@ export const userLogin = (email1, password1) => {
       const user = userCredential.user;
       if (user && user.emailVerified === true) {
         window.location.hash = '#/timeLine';
-      }
-      else {
+      } else {
         alert('Recuerda validar tu correo.');
         window.location.hash = '#/login';
       }
