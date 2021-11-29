@@ -58,18 +58,17 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
-
-.title-templete {
-    text-align: center;
-    margin: 10px;
-    margin-top: 20px;
+    background-color: thistle;
 }
 
 .logo-timeLine {
-    width: 10%;
+    width: 25%;
+    height: 35%;
 }
-
+.post {
+    display: flex;
+    flex-direction: column;
+}
 .firstPage .second-page {
     display: flex;
     flex-flow: column;
@@ -134,11 +133,11 @@ body {
 }
 
 .icon {
-    width: 25%;
+    width: 23%;
 }
 
 .icon1 {
-    width: 18%;
+    width:14%;
 }
 
 .logo {
@@ -205,7 +204,7 @@ body {
     background-color: white;
     color: rgba(0, 0, 0, 0.56);
     margin: 25px;
-    width: 70%;
+    width: 90%;
     padding: 20px 40px 20px 40px;
     font-family: 'Arimo', sans-serif;
     border-radius: 20px;
@@ -218,12 +217,19 @@ body {
     display: flex;
     flex-direction: row;
     margin-top: 15px;
-    padding-top: 15px;
+    padding-top: 20px;
+}
+
+#btnLike{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
 }
 
 .img-comment {
-    width: 50%;
+    size: 25%;
     padding-left:10px;
+    
 }
 
 .name-user{
@@ -277,6 +283,7 @@ textarea {
     color: rgba(0, 0, 0, 0.56);
     padding: 10px;
     font-size: medium;
+    resize: none;
 }
 
 textarea.active {
@@ -304,6 +311,8 @@ textarea.active {
         display: grid;
         grid-template-columns: 50% 50%;
     }
+
+    
 
     .container-logo {
         grid-column-start: 1 ;
@@ -341,7 +350,9 @@ textarea.active {
     }
 }
 
-/* css menu flotante */
+/* css menu flotante desktop*/
+
+@media screen and (min-width:630px){
 
 .nav-bar {
     background-color: sandybrown;
@@ -385,6 +396,7 @@ textarea.active {
     height: 0;
     overflow: visible;
     transition: all 0.3s;
+    font-size: 1em;
     visibility: hidden;
 }
 
@@ -402,6 +414,69 @@ textarea.active {
 .showMenu {
     margin-left: 0;
 }
+}
+
+/* menú flotante celular  y tablet*/
+
+.nav-bar {
+    background-color: sandybrown;
+    padding: 20px;
+    display: block;
+    color: seashell;
+    cursor: pointer;
+    font-size: 1.5em;
+    width: 110%;
+}
+
+.menu, .submenu {
+    padding:0; 
+    margin: 0;
+}
+
+.menu {
+    background-color:transparent;
+    width: 110%;
+    transition: all 0.5s;
+}
+
+.menu-link {
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 1.4em;
+    cursor: pointer;
+}
+
+.submenu {
+    position: absolute;
+    height: 0;
+    overflow: visible;
+    transition: all 0.3s;
+    visibility: hidden;
+}
+
+.container-submenu:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1000;
+}
+
+.submenu .menu-link{
+    background-color:#333;
+    padding-left: 20;
+}
+
+.showMenu {
+    margin-left: 0;
+}
+
+
+
+
+
+
+
+
 
 /* @media (min-width:1024px) {
     .nav-bar {

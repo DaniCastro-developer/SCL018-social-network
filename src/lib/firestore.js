@@ -8,6 +8,9 @@ import {
   doc,
   orderBy,
   updateDoc,
+  getDoc,
+  arrayRemove,
+  arrayUnion,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
 import { app } from '../lib/firebaseConfig.js';
 import { auth } from '../lib/auth.js';
@@ -30,6 +33,7 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
       location: locationValue,
       datePost: Date(Date.now()),
       like: [],
+      likesCounter: 0,
     });
     console.log('Document written with ID: ', docRef);
     return docRef;
@@ -60,23 +64,37 @@ export const deletePost = async (postId) => {
 };
 
 // función editar documento
-export const editPost = async (idPost, artsValue) => {
+export const editPost = async (idPost, artsValue, cateValue, dateValue, descripValue, locaValue, linkValue) => {
   const collectionRef = doc(db, 'Post', idPost);
   await updateDoc(collectionRef, {
     artist: artsValue,
+    category: cateValue,
+    date: dateValue,
+    description: descripValue,
+    links: linkValue,
+    location: locaValue,
+
   });
 };
 
-/*  cateValue, dateValue, descripValue, urlValue, locationValue
-category: cateValue,
-date: dateValue,
-description: descripValue,
-links: urlValue,
-location: locationValue, */
+// Dar like a una publicación
 
-/* export const editPost = async (idPost, artsValue) => {
-  const postRef = doc(db, 'publicaciones', idPost);
-  await updateDoc(postRef, {
-    artist: artsValue,
-  });
-}; */
+export const updateLikes = async (postId, userId) => {
+  const collectionRef = doc(db, 'Post', postId);
+  const docSnap = await getDoc(collectionRef);
+  const postData = docSnap.data();
+  const likesCount = postData.likesCounter;
+  // console.log(postData.like);
+
+  if ((postData.like).includes(userId)) {
+    await updateDoc(collectionRef, {
+      like: arrayRemove(userId),
+      likesCounter: likesCount - 1,
+    });
+  } else {
+    await updateDoc(collectionRef, {
+      like: arrayUnion(userId),
+      likesCounter: likesCount + 1,
+    });
+  }
+};

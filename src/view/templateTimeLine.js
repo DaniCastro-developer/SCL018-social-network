@@ -11,8 +11,9 @@ export const timeLine = () => {
 
   quarterPage.innerHTML = ` <header id = 'headerTimeLine'>
   <img class='logo-timeLine' src='resources/logo.png'> 
-  <nav id= 'userInfo'> </nav> 
-  <nav id='wallNav'>  
+  <nav id= 'userInfo'> </nav> </header> 
+      <section id= 'post'> <a href='#/post'> 
+      <figure id='wallNav'>  
   <span class='nav-bar' id='btnMenu'> <i class= 'fas fa-bars'> </i> Menú </span>
     <nav class='main-nav'>
       <ul class='menu' id='menu'>
@@ -25,9 +26,9 @@ export const timeLine = () => {
         <li class='menu-item menu-link'> <img src = ./resources/search.png class = 'icon1'> Buscar <li>
         <li class='menu-item menu-link'> <img src = ./resources/calendar.png class = 'icon1'> Calendario <li>
         </ul>
-      </nav>
-      </header> 
-      <section id= 'post'> <a href='#/post'> <button id="btnPublish"> <img src = 'resources/post.png' class='publish-btn'> </button> </a>
+      </figure>
+      
+      <a href='#/post'> <button id="btnPublish"> <img src = 'resources/post.png' class='publish-btn'> </button> </a>
       <main id='containerPost'> </main>
        </section>
       `;
