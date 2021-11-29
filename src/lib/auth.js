@@ -122,11 +122,7 @@ export const authChanged = () => {
       // console.log('usuario logueado', user.displayName);
       profileInit(user);
     } else if (!user) {
-      if (window.location.hash !== '#/resetPassword') {
-        exit();
-      } else {
-        // console.log('usuario debe crear una cuenta');
-      }
+      if (!['#/resetPassword', '#/account'].includes(window.location.hash)) window.location.hash = '#/login';
     }
   });
 };

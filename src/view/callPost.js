@@ -48,8 +48,8 @@ export const postCallback = (posts) => {
     item.addEventListener('click', () => deletePost(idPost));
   });
 
+  // función editar
   const btnEdit = postMain.querySelectorAll('.btn-Edit');
-
   btnEdit.forEach((item) => {
     item.addEventListener('click', (e) => {
       const dataBtn = e.target.parentElement;
