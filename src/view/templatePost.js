@@ -34,7 +34,7 @@ export const post = () => {
     const urlValue = thirdPage.querySelector('#links').value;
     const locationValue = thirdPage.querySelector('#location').value;
     if (artistValue === '' || categoryValue === '' || dateValue === '' || descriptionValue === '' || urlValue === '' || locationValue === '') {
-      alert('recuerda llenar todos los campos');
+      alert('Recuerda llenar todos los campos');
     } else {
       createPost(artistValue, categoryValue, dateValue, descriptionValue, urlValue, locationValue);
       window.location.hash = '#/timeLine';

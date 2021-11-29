@@ -11,15 +11,15 @@ export const createAccount = () => {
   const section2 = document.createElement('section');
   section2.className = 'create-Account';
   section2.id = 'createAccount';
-  section2.innerHTML = `<input type='text' id='createName' class = 'input' placeholder='Nombre de usuario'/>
-      <input type='email' id='mailRegister' class = 'input'  placeholder='Email' />
-      <input type='password' id='passwordRegister' class = 'input' placeholder='password' value='password'/>
+  section2.innerHTML = `<input type="text" id="createName" class = "input" placeholder="Nombre de usuario"/>
+      <input type="email" id="mailRegister" class = "input" placeholder="correo@ejemplo.com" pattern="^\\S+@\\S+\\.\\S+$" required/>
+      <input type="password" id="passwordRegister" class = "input" placeholder="contraseña" />
   
-      <p class = 'info'>  <input type='checkbox' class = 'info' class= 'disabled' id='conditions' value='check'/> Acepto términos y condiciones </p>
+      <p class = "info">  <input type="checkbox" class = "info" class= "disabled" id="conditions" value="check"/> Acepto términos y condiciones </p>
   
-      <button id = 'btnRegister' class= 'button'> Registrar </button>
+      <button id = "btnRegister" class= "button"> Registrar </button>
   
-     <p class= 'info'> ¿Ya tienes una cuenta? <a href='#/login'> Inicia sesión </a> </p>`;
+     <p class= "info"> ¿Ya tienes una cuenta? <a href="#/login"> Inicia sesión </a> </p>`;
 
   secondPage.appendChild(section2);
 

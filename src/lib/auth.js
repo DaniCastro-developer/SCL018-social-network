@@ -16,10 +16,10 @@ import {
 
 import { app } from './firebaseConfig.js';
 
-// const analytics = getAnalytics(app);
 export const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 
+// obtener información del usuario
 export const profileInit = (user) => {
   const userInfo = document.querySelector('#userInfo');
   userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'}
@@ -27,13 +27,13 @@ export const profileInit = (user) => {
   window.location.hash = '#/timeLine';
 };
 
-// registrar usuario
+// Registrar usuario
 export const userRegister = (email, password, name) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      console.log('usuario creado', user);
+      // console.log('usuario creado', user);
       updateProfile(auth.currentUser, {
         displayName: name,
       });
@@ -42,12 +42,12 @@ export const userRegister = (email, password, name) => {
       if (user != null) {
         sendEmailVerification(auth.currentUser)
           .then(() => {
-            console.log('correo enviado');
+            // console.log('correo enviado');
             alert('Hemos enviado un correo de verificación para validar tu cuenta.');
             window.location.hash = '#/login';
           })
           .catch((error) => {
-            console.log('Proceso no realizado', error);
+            // console.log('Proceso no realizado', error);
           });
       }
     })
@@ -56,11 +56,11 @@ export const userRegister = (email, password, name) => {
       const errorMessage = error.message;
       // ..
       alert(errorMessage);
-      console.log(errorCode + errorMessage);
+      // console.log(errorCode + errorMessage);
     });
 };
 
-// iniciar sesión con correo
+// Iniciar sesión con correo
 export const userLogin = (email1, password1) => {
   signInWithEmailAndPassword(auth, email1, password1)
     .then((userCredential) => {
@@ -77,12 +77,12 @@ export const userLogin = (email1, password1) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorMessage);
-      console.log(errorCode + errorMessage);
+      // console.log(errorCode + errorMessage);
       window.location.hash = '#/login';
     });
 };
 
-// iniciar sesión con google
+// Iniciar sesión con google
 export const loginWithGoogle = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
@@ -105,7 +105,7 @@ export const loginWithGoogle = () => {
     });
 };
 
-// cerrar sesión
+// Cerrar sesión
 export const exit = () => {
   signOut(auth).then(() => {
     window.location.hash = '#/login';
@@ -114,18 +114,18 @@ export const exit = () => {
   });
 };
 
-//  auth changed
+//  Observador de estado de autentificación
 export const authChanged = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
-      console.log('usuario logueado', user.displayName);
+      // console.log('usuario logueado', user.displayName);
       profileInit(user);
     } else if (!user) {
       if (window.location.hash !== '#/resetPassword') {
         exit();
       } else {
-        console.log('usuario debe crear una cuenta');
+        // console.log('usuario debe crear una cuenta');
       }
     }
   });

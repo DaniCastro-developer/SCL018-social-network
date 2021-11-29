@@ -12,12 +12,12 @@ import {
   arrayRemove,
   arrayUnion,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
-import { app } from '../lib/firebaseConfig.js';
-import { auth } from '../lib/auth.js';
+import { app } from './firebaseConfig.js';
+import { auth } from './auth.js';
 
 const db = getFirestore(app);
 
-// Acá se crea el post
+// Función para crear publicación
 export const createPost = async (artistValue, categoryValue, dateValue, descriptionValue, urlValue, locationValue) => {
   try {
     // Add a new document with a generated id.
@@ -35,10 +35,10 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
       like: [],
       likesCounter: 0,
     });
-    console.log('Document written with ID: ', docRef);
+    // console.log('Document written with ID: ', docRef);
     return docRef;
   } catch (e) {
-    console.error('Error adding document: ', e);
+    // console.error('Error adding document: ', e);
   }
 };
 
@@ -54,16 +54,16 @@ export const readData = (nameCollection, callback) => {
   });
 };
 
-// función para borrar publicación
+// Función para borrar publicación
 export const deletePost = async (postId) => {
-  console.log(postId);
+  // console.log(postId);
   const confirm = window.confirm('¿Quieres eliminar esta publicación?');
   if (confirm) {
     await deleteDoc(doc(db, 'Post', postId));
   }
 };
 
-// función editar documento
+// Función editar documento
 export const editPost = async (idPost, artsValue, cateValue, dateValue, descripValue, locaValue, linkValue) => {
   const collectionRef = doc(db, 'Post', idPost);
   await updateDoc(collectionRef, {

@@ -1,7 +1,9 @@
-import { readData,
+import {
+  readData,
   deletePost,
   editPost,
-  updateLikes } from '../lib/firestore.js';
+  updateLikes,
+} from '../lib/firestore.js';
 import { auth } from '../lib/auth.js';
 
 // Función que imprime los post
@@ -57,7 +59,7 @@ export const postCallback = (posts) => {
       const feedPost = dataBtn.childNodes[3].childNodes[1];
       feedPost.childNodes[1].removeAttribute('readonly');
       feedPost.childNodes[1].style.color = 'salmon';
-      console.log(feedPost.childNodes);
+      // console.log(feedPost.childNodes);
       feedPost.childNodes[3].removeAttribute('readonly');
       feedPost.childNodes[3].style.color = 'salmon';
       feedPost.childNodes[5].removeAttribute('readonly');
@@ -80,7 +82,7 @@ export const postCallback = (posts) => {
         const locaValue = feedPost.childNodes[7].value;
         const linkValue = feedPost.childNodes[9].value;
 
-        console.log(artsValue, idPost, cateValue, dateValue, descripValue, locaValue, linkValue);
+        // console.log(artsValue, idPost, cateValue, dateValue, descripValue, locaValue, linkValue);
 
         editPost(idPost, artsValue, cateValue, dateValue, descripValue, locaValue, linkValue);
       });
