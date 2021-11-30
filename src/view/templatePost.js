@@ -6,10 +6,10 @@ export const post = () => {
   thirdPage.className = 'quarter-page';
   thirdPage.id = 'quarterPage';
 
-  thirdPage.innerHTML = `<header> <img src="resources/logo.png" class="logo-timeLine"> 
+  thirdPage.innerHTML = `<header>  
   <nav class= "option-post"> 
   <img src="resources/close.png" id="closePost">
-  <span class = "title-template"> <h1> Publicar </h1> </span>
+  <span class = "title-template"> <h1> Crear publicación </h1> </span>
    </nav>
   </header>
   <section class= "post-template" id= "post">
@@ -18,7 +18,7 @@ export const post = () => {
         <input type="date" id="date" class = "input" placeholder="Fecha"/>
         <input type="text" id="location" class = "input" placeholder="Ubicación"/>
         <input type="url" id='links' class = 'input' placeholder="Links de interes"/>
-        <input type="text" id="description" class = "input" placeholder= "Descripción"/>
+        <input type="text" id="description" class = "input" placeholder= "Descripción del evento"/>
        
     
       <button id = "btnPost" class= "button"> Publicar </button>

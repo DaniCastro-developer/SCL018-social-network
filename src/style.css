@@ -22,93 +22,14 @@ a {
     color:#4C8A8A;
 }
 
+/* arreglos generales */
+
 body {
     background-color: rgba(28, 25, 26, 1);
     color:rgb(240, 212, 185);
     font-family: 'Arimo', sans-serif;
     margin-left: 10%;
     margin-right: 10%;
-}
-
-/* createPost */
-
-
-
-/* Post */
-
-.close-post{
-    width: 15%;
-    align-self: right;
-    display: flex;
-}
-
-#post{
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    flex-wrap: wrap;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
-/* timeLine */
-
-#headerTimeLine {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: thistle;
-}
-
-.logo-timeLine {
-    width: 25%;
-    height: 35%;
-}
-.post {
-    display: flex;
-    flex-direction: column;
-}
-.firstPage .second-page {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.input {
-    width: 261px;
-    height: 50px;
-    left: 57px; 
-    top: 362px;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    backdrop-filter: blur(4px);
-    border-radius: 10px;
-    font-family: 'Arimo', sans-serif;
-    margin-top: 15px;
-    padding-left: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.google {
-    width: 90%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#googleLogin {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: none;
-    background-color: transparent;
 }
 
 .button {
@@ -132,32 +53,141 @@ body {
     transition-duration: 0.4s;
 }
 
-.icon {
-    width: 23%;
-}
-
-.icon1 {
-    width:14%;
-}
-
-.logo {
-    width: 40%;
+.input {
+    width: 261px;
+    height: 50px;
+    left: 57px; 
+    top: 362px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    font-family: 'Arimo', sans-serif;
+    margin-top: 15px;
+    padding-left: 20px;
     display: block;
-    margin: auto;
-}
-
-.button:hover {
-    background-color: #FFFFFF; 
-    color: #4C8A8A;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .info {
-    font-size: 10px;
-    text-align: center;
+   text-align: center;
+}
+
+/* página de login */
+.firstPage {
+    display:flex; 
+    flex-direction: column;
+}
+
+.logo-login {
+    width: 90%;
+    display: block;
+    margin: 10px auto auto auto;
+}
+
+#lostPassword {
+    color: #4C8A8A;
+}
+
+.google {
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#googleLogin {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    background-color: transparent;
+}
+
+
+/* olvidé mi contraseña*/ 
+
+.iconPassword {
+    width: 50%;
+    margin: 50px 0px 20px 0px;
+}
+
+#resetEmail {
+    margin-top: 10%;
+    margin-bottom: 15%;
+}
+
+.resetPasswordForm {
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+}
+
+
+/* Post */
+
+.option-post {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#closePost {
+    width: 15%;
+    height: 15%;
+    display: flex;
+    align-self: flex-end;
+
+}
+
+.title-template {
+    display: flex;
+    justify-content: center;
+}
+
+#post{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#description{
+    height: 118px ;
+}
+
+
+
+/* timeLine */
+
+#headerTimeLine {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo-timeLine {
+    
+    width: 40%;
+    height: 50%;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
 }
 
 #btnPublish{
-    position: fixed;
     bottom: 30px;
     right: 80px;
     margin-bottom: 10%;
@@ -166,11 +196,25 @@ body {
 }
 
 .publish-btn{
-    /* position: fixed; */
     left: 890px;
     top: 715px;
     height: 64px;
+} 
+
+.icon {
+    width: 23%;
 }
+
+.icon-search {
+    width: 100%;
+    height: 100%;
+}
+
+.icon-calendar {
+    width: 95%;
+    height: 95%;
+}
+
 
 .title .userInfo{
     color: rgb(240, 212, 185);
@@ -186,10 +230,24 @@ body {
 }
 
 #profilePhoto {
-    width: 90px;
+    width: 75px;
     padding: 10px;
-    height:100;
+    height:75;
+    margin: auto;
     border-radius:60px;
+}
+
+#navUser {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(76, 138, 138, 1);
+    border-radius: 40px 40px 0px 0px;
+    position: fixed;
+    width: 375px;
+    height: 87px;
+    left: 0px;
+    top: 725px;
+    justify-content: space-evenly;
 }
 
 /* container Post */
@@ -197,18 +255,20 @@ body {
 #containerPost {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin-top: 50px;
+    margin-bottom: 80px;
 }
 
 .allPost {
     background-color: white;
     color: rgba(0, 0, 0, 0.56);
-    margin: 25px;
-    width: 90%;
+    margin-bottom: 20px;
+    width: 300px;
     padding: 20px 40px 20px 40px;
     font-family: 'Arimo', sans-serif;
     border-radius: 20px;
-
 }
 
 .reactions {
@@ -227,11 +287,15 @@ body {
 }
 
 .img-comment {
-    size: 25%;
+    width:20%;
+    height: 25%;
     padding-left:10px;
     
 }
+.img-like {
+    width: 70%;
 
+}
 .name-user{
     padding-right: 60%;
 }
@@ -249,28 +313,9 @@ body {
 }
 
 .feedPost {
-    display: flex;
-    flex-direction: column;
+    padding-top: 10px;
 }
 
-/* Page resetPassword */
-.password-logo {
-    width: 35%;
-    display: block;
-    margin: auto;
-}
-
-.iconPassword {
-    width: 10%;
-    display: block;
-    margin: auto;
-}
-
-.resetPasswordForm {
-    display: flex;
-    flex-direction: column;
-    text-align:center;
-}
 
 /* editar post */
 .btn-save{
@@ -281,7 +326,7 @@ textarea {
     border: none;
     font-family: 'Arimo', sans-serif;
     color: rgba(0, 0, 0, 0.56);
-    padding: 10px;
+    padding: 5px;
     font-size: medium;
     resize: none;
 }

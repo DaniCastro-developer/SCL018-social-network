@@ -13,6 +13,7 @@ import {
   updateProfile,
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js';
+import { timeLine } from '../view/templateTimeLine.js';
 
 import { app } from './firebaseConfig.js';
 
@@ -20,11 +21,10 @@ export const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 
 // obtener información del usuario
-export const profileInit = (user) => {
-  const userInfo = document.querySelector('#userInfo');
-  userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'}
-  <img id= profilePhoto src=${user.photoURL || '../resources/profile.png'} >`;
-  window.location.hash = '#/timeLine';
+export const profileInit = async (userCredential) => {
+  const user = userCredential.displayName;
+  const photo = userCredential.photoURL;
+  timeLine(user, photo);
 };
 
 // Registrar usuario

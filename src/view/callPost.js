@@ -19,15 +19,15 @@ export const postCallback = (posts) => {
     
      <div class="post" id="${element.id}">
       <div class="feedPost"> 
-      <textarea readonly class= "text-textarea"> ${element.artist} </textarea> - <textarea readonly class= "text-textarea"> ${element.category} </textarea>
-      <textarea readonly class= "text-textarea">  ${element.date} </textarea> - <textarea readonly class= "text-textarea"> ${element.location} </textarea>
+      <textarea readonly class= "text-textarea"> ${element.artist} </textarea> <textarea readonly class= "text-textarea"> ${element.category} </textarea>
+      <textarea readonly class= "text-textarea">  ${element.date} </textarea> <textarea readonly class= "text-textarea"> ${element.location} </textarea>
       <textarea readonly class= "text-textarea"> ${element.links} </textarea>
       <textarea readonly class= "text-textarea"> ${element.description} </textarea>
       </div>
      </div>
      <div class="reactions">
       <p class="likesCount" id="like-counter"> ${element.likesCounter} </p> <button id="btnLike" value= "${element.id}">
-        <img class="img" src="./resources/like.png"> </button> 
+        <img class="img-like" src="./resources/like.png"> </button> 
         <img class="img-comment" src="./resources/comment.png">
       </div>
     </div>`;

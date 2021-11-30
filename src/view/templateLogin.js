@@ -6,7 +6,7 @@ export const homeLogin = () => {
   firstPage.className = 'firstPage';
   firstPage.id = 'container';
 
-  firstPage.innerHTML = ` <header> <img src= "resources/logo.png" class="title1"> </header> 
+  firstPage.innerHTML = ` <header> <img src= "resources/logo.png" class="logo-login"> </header> 
   <section class= "login"> 
   <input type="email" class= "input" id="mailLogin" placeholder="correo@ejemplo.com" pattern="^\\S+@\\S+\\.\\S+$" required />
   <input type='password' class= "input" id="passwordLogin" placeholder="contraseña" />
