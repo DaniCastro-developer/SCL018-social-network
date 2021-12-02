@@ -25,7 +25,7 @@ a {
 /* arreglos generales */
 
 body {
-    background-color: rgba(28, 25, 26, 1);
+    background-color: rgb(34, 32, 32);
     color:rgb(240, 212, 185);
     font-family: 'Arimo', sans-serif;
     margin-left: 10%;
@@ -394,18 +394,25 @@ textarea {
     .firstPage {
         display: grid;
         grid-template-columns: 50% 50%;
+        margin-bottom: 50px;
     }
 
     .logo-login {
         grid-column-start: 1;
-        margin-top: 27%;
-        background-color: rgb(34, 32, 32);
+        margin-top: 15%;
+    }
+
+    .logoContainer{
+        border-radius: 20px 0px 0px 20px;
+        margin-top: 20%;
+        background-color: rgba(28, 25, 26, 1);
+
     }
 
     .login {
         margin-top: 20%;
         grid-column-start: 2;
-        border-radius:20px;
+        border-radius: 0px 20px 20px 0px;
         background-color: rgb(54, 51, 52);
         padding:30px;
     }
@@ -417,8 +424,12 @@ textarea {
     .google {
         width: auto;
     }
-    head {
+
+    .logoAccount {
+        margin-top: 30%;
         grid-column-start:1;
+        border-radius: 20px 0px 0px 20px;
+        background-color: rgba(28, 25, 26, 1);
     }
 
     .second-page {
@@ -428,9 +439,8 @@ textarea {
 
     #createAccount {
         margin-top: 30%;
-        margin-left: 5%;
         padding:20px;
-        border-radius: 20px;
+        border-radius: 0px 20px 20px 0px;
         grid-column-start: 2;
         background-color: rgb(54, 51, 52);
     }
@@ -446,15 +456,21 @@ textarea {
     }
 
     .container-logo {
-        margin-top: 35%;
+        margin-top: 30%;
         grid-column-start: 1;
+        border-radius: 20px 0px 0px 20px;
+        background-color: rgba(28, 25, 26, 1);
+    }
+
+    .iconPassword {
+        padding-top: 20%;
     }
 
     
     .container-password {
-        margin-top: 20%;
+        margin-top: 30%;
         grid-column-start: 2;
-        border-radius: 20px;
+        border-radius: 0px 20px 20px 0px;
         background-color: rgb(54, 51, 52);
         padding: 12%;
     }
@@ -472,6 +488,10 @@ textarea {
 
     }
 
+    #profilePhoto:hover{
+        background-color: rgba(76, 138, 138, 1);
+    }
+
 
     /* menu flotante */
 
@@ -479,7 +499,7 @@ textarea {
     display: block;
     padding: 10px;
     color: rgb(240, 212, 185);
-    font-size: 2em;
+    font-size: 1.9em;
     cursor: pointer;
 }
 
@@ -541,6 +561,13 @@ textarea {
     font-size: 14px;
     margin-right: 10px;
     height: 40px;
+}
+
+#headerTimeLine{
+    background-color: rgba(28, 25, 26, 1);
+    padding:10px;
+    border-radius: 0px 0px 20px 20px;
+    margin-top: -5px;
 }
 
 #navUser {

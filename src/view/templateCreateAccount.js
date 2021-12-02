@@ -4,7 +4,7 @@ export const createAccount = () => {
   const secondPage = document.createElement('div');
   secondPage.className = 'second-page';
   secondPage.id = 'secondPage';
-  secondPage.innerHTML = `<header> <img src='resources/logo.png' class = 'logo-login'> 
+  secondPage.innerHTML = `<header class= "logoAccount"> <img src='resources/logo.png' class = 'logo-login'> 
    </header>`;
 
   // section 2 - Página para crear cuenta
