@@ -25,7 +25,7 @@ a {
 /* arreglos generales */
 
 body {
-    background-color: rgb(34, 32, 32);
+    background-color: rgba(28, 25, 26, 1);
     color:rgb(240, 212, 185);
     font-family: 'Arimo', sans-serif;
     margin-left: 10%;
@@ -246,7 +246,7 @@ body {
     width: 375px;
     height: 107px;
     left: 0px;
-    top: 710px;
+    top: 550px;
     justify-content: space-evenly;
 }
 
@@ -390,6 +390,10 @@ textarea {
 /* media computador */ 
 
 @media screen and (min-width:630px){
+
+    body {
+        background-color: rgb(34, 32, 32);
+    }
 
     .firstPage {
         display: grid;
