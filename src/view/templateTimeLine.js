@@ -1,7 +1,7 @@
 // import función para muro??
 import { exit } from '../lib/auth.js';
 import { readData } from '../lib/firestore.js';
-import { postCallback, showPost } from '../view/callPost.js'
+import { postCallback } from '../view/callPost.js'
 
 export const timeLine = (user, photo) => {
   console.log(user, photo);
@@ -30,8 +30,6 @@ export const timeLine = (user, photo) => {
         <li class='menu-item menu-link'> <img src = ./resources/calendar.png class = 'icon-calendar'> <li>
        </footer>
       `;
-
-  showPost();
 
   const logOut = quarterPage.querySelector('#logOut');
   logOut.addEventListener('click', () => {

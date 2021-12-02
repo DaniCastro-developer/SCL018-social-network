@@ -101,7 +101,3 @@ export const postCallback = (posts) => {
 
   return postMain;
 };
-
-export const showPost = () => {
-  readData('Post', postCallback);
-};
