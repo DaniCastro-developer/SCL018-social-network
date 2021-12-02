@@ -1,41 +1,39 @@
 <p align=center> <img src=src/resources/logo.png width= 300px> </p>
 
-# **Concert Date.**
+_______________
+# **Investigación y diseño.**
+## **Concert Date.**
 
 Concert Date es un nuevo punto de encuentro para aquellas personas que disfrutan de la música y los conciertos. Esta red social busca generar una instancia para compartir los mejores datos de concientos y/o festivales de música. En ella podrás encontrar eventos por artista, fecha, estilo de música y ubicación, para no pederte ninguno.
 
-Esta red social está pensada y diseñada para aquellos amantes de la musica que deseen encontrar y organizar sus mejores eventos musicales.
+Esta red social está pensada y diseñada para amantes de la música que deseen encontrar y organizar sus mejores eventos musicales.
 
 
-<img src='src/Recursos/Inicio.jpg' width=400px> Poner imagen de la página principal. 
+<img src='src/resources/pagina-login.jpg' width=400px> 
 
-Descubre [Concert Date] en (https://danicastro-developer.github.io/SCL018-data-lovers/src/index.html).
+Descubre [Concert Date] en (https://danicastro-developer.github.io/SCL018-social-network/src/index.html#/login).
 
-_______________
-## **Investigación y diseño.**
 
-Nuestra página está orientada a fanáticos de la serie que quieran buscar acerca de los personajes de la serie, permitiéndoles visualizarlos de manera ordenada y filtrarlos según género, especie, status, lugar de origen o locación. También pueden encontrar una barra de búsqueda para localizar de manera más rápida a su personaje.
 
 ### *Prototipos en papel*.
 
-<img src=src/Recursos\Prototipo2.jpg width=300px> 
-
-
-### *Prototipo de baja fidelidad*.
-<img src=src/Recursos\prototipo1.png width=300px> <img src=src/Recursos\prototipo4.png width=300px>
+<img src=src/resources/paper-prototype/1.jpg width=300px> 
+<img src=src/resources/paper-prototype/2.jpg width=300px> 
+<img src=src/resources/paper-prototype/3.jpg width=300px> 
+<img src=src/resources/paper-prototype/4.jpg width=300px> 
 
 
 ### *Prototipo de alta fidelidad.*
-Nuestro prototipo de alta fidelidad fue realizado en Figma, donde desarrollamos varias ideas de diseño optando al final por la que más adeptos tuvo en la etapa de feedback.
+Nuestro prototipo de alta fidelidad fue realizado en Figma, donde desarrollamos varias ideas de diseño optando al final por la que más adeptos tuvo en la etapa de feedback. El diseño fue pensado para celular, tomando como referencia el Iphone X (375 x 812).
 
-Puedes revisar los prototipos en [Figma.](https://www.figma.com/file/EUsIsmQ9N9AMm7Rf3T2zk2/Rick-and-Morty?node-id=0%3A1)
+Puedes revisar los prototipos en [Figma.](https://www.figma.com/file/9YjswY4QEgzAftI3UUbDlB/Red-social---ConcertDate?node-id=0%3A1)
 
-<img src=src/Recursos\Inicio.jpg width=300px>
-<img src=src/Recursos\pagina3.png width=300px>
+<img src='src/resources/pagina-login.png' width=400px> 
+<img src='src/resources/timeLine.png' width=400px> 
 
 _________________
 ## **Responsive.**
-Nuestro sitio web es adaptable a diferentes tamaños de pantallas, creando un diseño responsivo para computadores, tablets y celulares. 
+Nuestra red social está pensada para usar principalmente en celulares, pero es adaptable a pantalla de escritorio.
 
 *Prototipo para celular*
 
@@ -61,8 +59,4 @@ _____________________
 
 ## **Test de usabilidad.**
 
-Uno de los problemas que se presentaron en los test de usabilidad fue cómo obtener más información de los personajes, ya que nuestras cartas se voltean al pasar el cursor sobre ellas. Esto generó mayores problemas en el formato para celular y tablet, ya que el voltear las tarjetas no era intuitivo. Es por esto que decidimos poner un gif al comienzo de la segunda página para que mostrara cómo usar las tarjetas y además modificar el hover por unz función que se active con un clic.
-
-Otro elemento a considerar, luego de testear la usabilidad, fue el idioma, ya que nuestra data estaba en inglés y nuestra interfaz en español, por lo que luego del feedback recibido decidimos dejar todo en inglés.
-
-Con respecto a las otras funciones de la página, nuestros usuarios no presentaron mayor dificultad para usarla, ya que nuestra página tiene un diseño simple y preciso, ayudando a que los usuarios naveguen con fluidez.
+Comming soon

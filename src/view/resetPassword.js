@@ -29,7 +29,7 @@ export const resetPassword = () => {
       <input id="resetEmail" class="input" name="emailReset" type="email" placeholder="correo@ejemplo.com" pattern="^\\S+@\\S+\\.\\S+$" required/>
       <button id="resetPasswordButton" class="button"> Recuperar contraseña </button>
       <a href="#/account" > Crear cuenta nueva </a>
-      <a href="#/login"> | | Volver a inicio de sesión </a>
+      <a href="#/login"> - Volver a inicio de sesión </a>
       </div>
     </form>
   `;

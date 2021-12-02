@@ -19,9 +19,9 @@ export const timeLine = (user, photo) => {
             </ul>
   </nav> 
   </header> 
-      <section id= "post"> 
+      <section class= "posts-container"> 
       
-      <main id="containerPost"> </main>
+      <main id="postContainer"> </main> 
 
        </section>
        <footer id= "navUser">
@@ -37,6 +37,12 @@ export const timeLine = (user, photo) => {
   logOut.addEventListener('click', () => {
     exit();
     alert('Sesión cerrada con éxito, vuelve pronto');
+  });
+
+  const profileOptions = quarterPage.querySelector('#profilePhoto');
+  const submenu = quarterPage.querySelector('.submenu');
+  profileOptions.addEventListener('click', () => {
+    submenu.classList.toggle('show');
   });
 
   readData('Post', postCallback);

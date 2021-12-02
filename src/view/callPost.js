@@ -9,7 +9,7 @@ import { auth } from '../lib/auth.js';
 // Función que imprime los post
 // Esta función se llama en el TemplateTimeLine
 export const postCallback = (posts) => {
-  const postMain = document.querySelector('#containerPost');
+  const postMain = document.querySelector('#postContainer');
   postMain.innerHTML = '';
   const postContent = (element) => {
     const postUser = document.createElement('div');
@@ -58,18 +58,18 @@ export const postCallback = (posts) => {
       btnSave.style.display = 'inline';
       const feedPost = dataBtn.childNodes[3].childNodes[1];
       feedPost.childNodes[1].removeAttribute('readonly');
-      feedPost.childNodes[1].style.color = 'salmon';
+      feedPost.childNodes[1].classList.toggle('active');
       // console.log(feedPost.childNodes);
       feedPost.childNodes[3].removeAttribute('readonly');
-      feedPost.childNodes[3].style.color = 'salmon';
+      feedPost.childNodes[3].classList.toggle('active');
       feedPost.childNodes[5].removeAttribute('readonly');
-      feedPost.childNodes[5].style.color = 'salmon';
+      feedPost.childNodes[5].classList.toggle('active');
       feedPost.childNodes[7].removeAttribute('readonly');
-      feedPost.childNodes[7].style.color = 'salmon';
+      feedPost.childNodes[7].classList.toggle('active');
       feedPost.childNodes[9].removeAttribute('readonly');
-      feedPost.childNodes[9].style.color = 'salmon';
+      feedPost.childNodes[9].classList.toggle('active');
       feedPost.childNodes[11].removeAttribute('readonly');
-      feedPost.childNodes[11].style.color = 'salmon';
+      feedPost.childNodes[11].classList.toggle('active');
 
       btnSave.addEventListener('click', () => {
         item.style.display = 'inline';
