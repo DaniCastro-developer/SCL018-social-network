@@ -11,6 +11,7 @@ import {
   getDoc,
   arrayRemove,
   arrayUnion,
+  Timestamp,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js';
 import { app } from './firebaseConfig.js';
 import { auth } from './auth.js';
@@ -31,7 +32,7 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
       description: descriptionValue,
       links: urlValue,
       location: locationValue,
-      datePost: Date(Date.now()),
+      datePost: Timestamp.fromDate(new Date()),
       like: [],
       likesCounter: 0,
     });
@@ -44,7 +45,7 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
 
 // Función para leer data de la colección de Firebase
 export const readData = (nameCollection, callback) => {
-  const q = query(collection(db, nameCollection), orderBy('datePost', 'asc'));
+  const q = query(collection(db, nameCollection), orderBy('datePost', 'desc'));
   onSnapshot(q, (querySnapshot) => {
     const posts = [];
     querySnapshot.forEach((doc) => {

@@ -1,5 +1,4 @@
 import {
-  readData,
   deletePost,
   editPost,
   updateLikes,

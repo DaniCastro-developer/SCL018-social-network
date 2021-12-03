@@ -56,11 +56,9 @@ body {
 .input {
     width: 261px;
     height: 50px;
-    left: 57px; 
-    top: 362px;
     background: #FFFFFF;
     border: 1px solid #000000;
-    box-sizing: border-box;
+   /*  box-sizing: border-box; */
     backdrop-filter: blur(4px);
     border-radius: 10px;
     font-family: 'Arimo', sans-serif;
@@ -131,15 +129,18 @@ body {
 /* Post */
 
 .option-post {
-    margin-top: 50px;
+    background-color: rgb(90, 84, 86);
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
+    padding:10px;
+    border-radius: 0px 0px 20px 20px;
+    margin-top: -8px;
 
 }
 
 #closePost {
-    width: 15%;
-    height: 15%;
+    width: 34px;
     display: flex;
     align-self: flex-end;
 
@@ -148,13 +149,13 @@ body {
 .title-template {
     display: flex;
     justify-content: center;
+    font-size: 0.8em;
 }
 
 #post{
     display: flex;
     flex-direction: column;
     align-content: center;
-    flex-wrap: wrap;
 }
 
 #description{
@@ -195,35 +196,18 @@ body {
     border: none;
 }
 
-.publish-btn{
-    left: 890px;
-    top: 715px;
-    height: 64px;
-} 
-
 .icon {
-    width: 23%;
+    width: 18%;
 }
 
-.icon-search {
-    width: 85%;
-    height: 85%;
+.icon-nav {
+    margin-top: 10%;
+    height: 45px;
 }
 
-.icon-calendar {
-    width: 85%;
-    height: 75%;
-}
-
-
-.title .userInfo{
-    color: rgb(240, 212, 185);
-    text-align: center;
-    size: 120px;
-}
 
 #userInfo {
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items:flex-start;
@@ -244,9 +228,9 @@ body {
     border-radius: 40px 40px 0px 0px;
     position: fixed;
     width: 375px;
-    height: 107px;
+    height: 80px;
     left: 0px;
-    top: 550px;
+    top: 590px;
     justify-content: space-evenly;
 }
 
@@ -258,7 +242,7 @@ body {
     justify-content: center;
     width: 300px;
     margin-top: 50px;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 .allPost {
@@ -266,7 +250,7 @@ body {
     color: rgba(0, 0, 0, 0.56);
     margin-bottom: 20px;
     width: 300px;
-    padding: 20px 40px 20px 40px;
+    padding: 20px 25px 20px 25px;
     font-family: 'Arimo', sans-serif;
     border-radius: 20px;
 }
@@ -276,9 +260,7 @@ body {
     border-top: solid;
     display: flex;
     flex-direction: row;
-    margin-top: 15px;
-    padding-top: 20px;
-    justify-content: center;
+    padding-left: 5%;
 }
 
 #btnLike{
@@ -294,16 +276,7 @@ body {
 }
 
 .img-like {
-    width: 70%;
-
-}
-.name-user{
-    padding-right: 60%;
-}
-
-.img-options {
-    width: 7%;
-    height: 7%;
+    width: 65%;
 
 }
 
@@ -323,14 +296,14 @@ body {
 
  .btn-Edit, .btn-Delete,  .btn-save {
     width: 85px;
-    height: 50px;
+    height: 40px;
     background: #4C8A8A;
     backdrop-filter: blur(4px);
     border: none;
     border-radius: 10px;
     font-family: 'Arimo', sans-serif;
     color: rgb(240, 212, 185);
-    font-size:18px;
+    font-size: 0.8em;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -345,7 +318,7 @@ textarea {
     border: none;
     font-family: 'Arimo', sans-serif;
     color: rgba(0, 0, 0, 0.56);
-    padding: 5px;
+    padding: 2px;
     font-size: medium;
     resize: none;
 }
@@ -361,7 +334,6 @@ textarea {
 .menu-link {
     display: block;
     padding: 10px;
-    color: rgb(240, 212, 185);
     font-size: 1.4em;
     cursor: pointer;
 }
@@ -379,9 +351,10 @@ textarea {
 }
 
 .submenu .menu-link{
-    background-color:rgb(129, 126, 126);
+    background-color:rgb(150, 196, 196);
     padding-left: 20;
-    font-size: small;
+    font-size: 0.8em;
+    color: black;
     font-family: 'arimo', sans-serif;
 }
 
@@ -392,7 +365,7 @@ textarea {
 @media screen and (min-width:630px){
 
     body {
-        background-color: rgb(34, 32, 32);
+        background-color: rgb(43, 40, 40);
     }
 
     .firstPage {
@@ -460,7 +433,7 @@ textarea {
     }
 
     .container-logo {
-        margin-top: 30%;
+        margin-top: 20%;
         grid-column-start: 1;
         border-radius: 20px 0px 0px 20px;
         background-color: rgba(28, 25, 26, 1);
@@ -472,7 +445,7 @@ textarea {
 
     
     .container-password {
-        margin-top: 30%;
+        margin-top: 20%;
         grid-column-start: 2;
         border-radius: 0px 20px 20px 0px;
         background-color: rgb(54, 51, 52);
@@ -502,8 +475,6 @@ textarea {
 .menu-link {
     display: block;
     padding: 10px;
-    color: rgb(240, 212, 185);
-    font-size: 1.9em;
     cursor: pointer;
 }
 
@@ -513,7 +484,6 @@ textarea {
     overflow: visible;
     transition: all 0.6s linear 0.4s;
     display: none;
-    margin-right: 10px;
 } 
 
 .submenu.show {
@@ -522,8 +492,7 @@ textarea {
 
 .submenu .menu-link{
     background-color:rgb(129, 126, 126);
-    padding-left: 20;
-    font-size: 1.3em;
+    font-size: 1em;
     font-family: 'arimo', sans-serif;
 }
 
@@ -555,10 +524,11 @@ textarea {
 .reactions {
     justify-content: left;
 }
+
 .img-comment {
-    width:8%;
-    height: 12%;
-    padding-top: 6px;
+    width:7%;
+    height: 11%;
+    padding-top: 10px;
 }
 
 .btn-Edit, .btn-Delete,  .btn-save {
@@ -567,7 +537,7 @@ textarea {
     height: 40px;
 }
 
-#headerTimeLine{
+#headerTimeLine, .option-post {
     background-color: rgba(28, 25, 26, 1);
     padding:10px;
     border-radius: 0px 0px 20px 20px;
@@ -579,7 +549,7 @@ textarea {
     flex-direction: column;
     background-color: rgba(76, 138, 138, 1);
     position: fixed;
-    width: 100px;
+    width: 80px;
     height: 375px;
     left: 0px;
     top: 230px;
@@ -600,7 +570,25 @@ textarea {
 }
 
 .title-template{
-    font-size: 24px;
+    font-size: 22px;
 }
+
+#userNav {
+    padding-right: 20px;
+}
+
+.input-post {
+    padding-top: 6%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+
+/* #description, #links {
+    width: 630px;
+} */
+
 
 }

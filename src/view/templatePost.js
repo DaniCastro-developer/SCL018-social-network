@@ -13,12 +13,14 @@ export const post = () => {
    </nav>
   </header>
   <section class= "post-template" id= "post">
+  <div class= "input-post">
   <input type="text" id="artist" class = "input" placeholder="Artista/s"/>
         <input type="text" id="category" class = "input"  placeholder="Categoría" />
         <input type="date" id="date" class = "input" placeholder="Fecha"/>
         <input type="text" id="location" class = "input" placeholder="Ubicación"/>
-        <input type="url" id='links' class = 'input' placeholder="Links de interes"/>
+        <input type="url" id="links" class = "input" placeholder="Links de interes"/>
         <input type="text" id="description" class = "input" placeholder= "Descripción del evento"/>
+ </div>
        
     
       <button id = "btnPost" class= "button"> Publicar </button>

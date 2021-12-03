@@ -13,19 +13,26 @@ import {
   updateProfile,
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js';
-import { timeLine } from '../view/templateTimeLine.js';
 
 import { app } from './firebaseConfig.js';
 
 export const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 
+// obtener datos del usurario
+export const profileInit = (user) => {
+  console.log(user)
+  const userInfo = document.querySelector('#userInfo');
+  userInfo.innerHTML = `<img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} > Hola ${user.displayName || 'Usuario'} `;
+  window.location.hash = '#/timeLine';
+};
+
 // obtener información del usuario
-export const profileInit = async (userCredential) => {
+/* export const profileInit = async (userCredential) => {
   const user = userCredential.displayName;
   const photo = userCredential.photoURL;
   timeLine(user, photo);
-};
+}; */
 
 // Registrar usuario
 export const userRegister = (email, password, name) => {
