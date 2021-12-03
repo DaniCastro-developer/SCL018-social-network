@@ -32,7 +32,7 @@ export const createPost = async (artistValue, categoryValue, dateValue, descript
       description: descriptionValue,
       links: urlValue,
       location: locationValue,
-      datePost: Timestamp.fromDate(new Date()),
+      datePost: Date(Date.now()),
       like: [],
       likesCounter: 0,
     });

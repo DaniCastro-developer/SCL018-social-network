@@ -21,7 +21,7 @@ const provider = new GoogleAuthProvider(app);
 
 // obtener datos del usurario
 export const profileInit = (user) => {
-  console.log(user)
+  // console.log(user)
   const userInfo = document.querySelector('#userInfo');
   userInfo.innerHTML = `<img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} > Hola ${user.displayName || 'Usuario'} `;
   window.location.hash = '#/timeLine';
