@@ -24,154 +24,14 @@ a {
     color:#4C8A8A;
 }
 
-/* Estructura general de páginas*/
+/* arreglos generales */
+
 body {
     background-color: rgba(28, 25, 26, 1);
     color:rgb(240, 212, 185);
     font-family: 'Arimo', sans-serif;
     margin-left: 10%;
     margin-right: 10%;
-}
-
-/* Página de login */
-.firstPage {
-    display:flex; 
-    flex-direction: column;
-}
-
-#logoCD {
-    width: 80%;
-    display: block;
-    margin: auto;
-}
-#lostPassword {
-    color: #4C8A8A;
-}
-/* Página de createAccount (OK) */   
-
-/* Página olvidé mi contraseña */
-
-.password-logo {
-    width: 30%;
-    display: block;
-    margin: 60px auto 30px auto;
-
-}
-
-/* .iconPassword {
-    margin-top: 10px;
-    width: 15%;
-    display: block;
-    margin: auto;
-}
- */
-
- .hText {
-    font-size: 15px;
-    margin-bottom: 20px;
-    line-height: 1.6;
- }
-
- .formText {
-    font-size: 10px;
-    line-height: 1.6;
- }
-#resetEmail {
-    margin-top: 15%;
-    margin-bottom: 15%;
-}
-
-.resetPasswordForm {
-    display: flex;
-    flex-direction: column;
-    text-align:center;
-}
-
-#ccn {
-    font-size: 10px;
-    color:#4C8A8A;
-}
-
-#vis {
-    font-size: 10px;
-    color:#4C8A8A;
-}
-/* Post */
-
-.close-post{
-    width: 15%;
-    align-self: right;
-    display: flex;
-}
-
-#post{
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    flex-wrap: wrap;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
-/* timeLine */
-
-#headerTimeLine {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.title-templete {
-    text-align: center;
-    margin: 10px;
-    margin-top: 20px;
-}
-
-.logo-timeLine {
-    width: 10%;
-}
-
-.firstPage .second-page {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.input {
-    width: 261px;
-    height: 50px;
-    left: 57px; 
-    top: 362px;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    backdrop-filter: blur(4px);
-    border-radius: 10px;
-    font-family: 'Arimo', sans-serif;
-    margin-top: 15px;
-    padding-left: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.google {
-    width: 90%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#googleLogin {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: none;
-    background-color: transparent;
 }
 
 .button {
@@ -195,81 +55,206 @@ body {
     transition-duration: 0.4s;
 }
 
-.icon {
-    width: 25%;
-}
-
-.icon1 {
-    width: 18%;
-}
-
-/* .logo {
-    width: 40%;
+.input {
+    width: 261px;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+   /*  box-sizing: border-box; */
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    font-family: 'Arimo', sans-serif;
+    margin-top: 15px;
+    padding-left: 20px;
     display: block;
-    margin: auto;
-} */
-
-.button:hover {
-    background-color: #FFFFFF; 
-    color: #4C8A8A;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .info {
-    font-size: 10px;
-    text-align: center;
+   text-align: center;
+}
+
+/* página de login */
+.firstPage {
+    display:flex; 
+    flex-direction: column;
+}
+
+.logo-login {
+    width: 90%;
+    display: block;
+    margin: 5px auto auto auto;
+}
+
+#lostPassword {
+    color: #4C8A8A;
+}
+
+.google {
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#googleLogin {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    background-color: transparent;
+}
+
+
+/* olvidé mi contraseña*/ 
+
+.iconPassword {
+    width: 50%;
+    margin: 50px 0px 20px 0px;
+}
+
+#resetEmail {
+    margin-top: 10%;
+    margin-bottom: 15%;
+}
+
+.resetPasswordForm {
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+}
+
+
+/* Post */
+
+.option-post {
+    background-color: rgb(90, 84, 86);
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    border-radius: 0px 0px 20px 20px;
+    margin-top: -8px;
+
+}
+
+#closePost {
+    width: 34px;
+    display: flex;
+    align-self: flex-end;
+
+}
+
+.title-template {
+    display: flex;
+    justify-content: center;
+    font-size: 0.8em;
+}
+
+#post{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#description{
+    height: 118px ;
+}
+
+
+
+/* timeLine */
+
+#headerTimeLine {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo-timeLine {
+    
+    width: 40%;
+    height: 50%;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
 }
 
 #btnPublish{
-    position: fixed;
     bottom: 30px;
-    right: 20px;
+    right: 80px;
     margin-bottom: 10%;
     background-color: transparent;
     border: none;
 }
 
-.publish-btn{
-    width: 20%;
-    margin-left: 70%;
+.icon {
+    width: 18%;
 }
 
-.title .userInfo{
-    color: rgb(240, 212, 185);
-    text-align: center;
-    size: 120px;
+.icon-nav {
+    margin-top: 10%;
+    height: 45px;
 }
+
 
 #userInfo {
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items:flex-start;
 }
 
 #profilePhoto {
-    width: 90px;
+    width: 75px;
     padding: 10px;
-    height:100;
+    height:75;
+    margin: auto;
     border-radius:60px;
+}
+
+#navUser {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(76, 138, 138, 1);
+    border-radius: 40px 40px 0px 0px;
+    position: fixed;
+    width: 375px;
+    height: 80px;
+    left: 0px;
+    top: 590px;
+    justify-content: space-evenly;
 }
 
 /* container Post */
 
-#containerPost {
+#postContainer{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin-top: 50px;
+    margin-bottom: 100px;
 }
 
 .allPost {
     background-color: white;
     color: rgba(0, 0, 0, 0.56);
-    margin: 25px;
-    width: 70%;
-    padding: 20px 40px 20px 40px;
+    margin-bottom: 20px;
+    width: 300px;
+    padding: 20px 25px 20px 25px;
     font-family: 'Arimo', sans-serif;
     border-radius: 20px;
-
 }
 
 .reactions {
@@ -277,34 +262,103 @@ body {
     border-top: solid;
     display: flex;
     flex-direction: row;
-    margin-top: 15px;
-    padding-top: 15px;
+    padding-left: 5%;
+}
+
+#btnLike{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
 }
 
 .img-comment {
-    width: 50%;
-    padding-left:10px;
+    width:15%;
+    height: 20%;
+    padding-top: 12px;
 }
 
-.name-user{
-    padding-right: 60%;
-}
-
-.img-options {
-    width: 7%;
-    height: 7%;
+.img-like {
+    width: 65%;
 
 }
 
-.user-post {
-    color: black;
+.user {
+    color: rgba(76, 138, 138, 1);
     display: flex;
     flex-direction: row;
 }
 
 .feedPost {
-    display: flex;
-    flex-direction: column;
+    padding-top: 10px;
+}
+
+.likesCount {
+    font-size: 20px;
+}
+
+ .btn-Edit, .btn-Delete,  .btn-save {
+    width: 85px;
+    height: 40px;
+    background: #4C8A8A;
+    backdrop-filter: blur(4px);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Arimo', sans-serif;
+    color: rgb(240, 212, 185);
+    font-size: 0.8em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* editar post */
+.btn-save{
+    display: none;
+}
+
+textarea {
+    border: none;
+    width: 85%;
+    height: auto;
+    font-family: 'Arimo', sans-serif;
+    color: rgba(0, 0, 0, 0.56);
+    padding: 2px;
+    font-size: medium;
+    resize: none;
+}
+
+.text-textarea.active {
+    box-shadow: 2px 2px 2px 1px rgba(76, 138, 138, 1);
+    color: rgba(199, 89, 36, 1);
+}
+
+/* menu flotante */
+
+.menu-link {
+    display: block;
+    padding: 10px;
+    font-size: 1.4em;
+    cursor: pointer;
+}
+
+.submenu {
+    position: absolute;
+    height: 0;
+    overflow: visible;
+    transition: all 0.3s;
+    display: none;
+} 
+
+.submenu.show {
+    display: block;
+}
+
+.submenu .menu-link{
+    background-color:rgb(150, 196, 196);
+    padding-left: 20;
+    font-size: 0.8em;
+    color: black;
+    font-family: 'arimo', sans-serif;
 }
 
 
@@ -313,47 +367,34 @@ body {
 
 @media screen and (min-width:630px){
 
+    body {
+        background-color: rgb(43, 40, 40);
+    }
+
     .firstPage {
         display: grid;
         grid-template-columns: 50% 50%;
-
+        margin-bottom: 50px;
     }
 
-    .second-page {
-        display: grid;
-        grid-template-columns: 50% 50%;
+    .logo-login {
+        grid-column-start: 1;
+        margin-top: 15%;
     }
 
-    .resetPasswordForm {
-        display: grid;
-        grid-template-columns: 50% 50%;
-    }
+    .logoContainer{
+        border-radius: 20px 0px 0px 20px;
+        margin-top: 20%;
+        background-color: rgba(28, 25, 26, 1);
 
-    .container-logo {
-        grid-column-start: 1 ;
-    }
-
-    .container-password {
-        grid-column-start: 2;
-    }
-
-    head {
-        grid-column-start:1;
     }
 
     .login {
-        margin-top: 30%;
+        margin-top: 20%;
         grid-column-start: 2;
-    }
-
-    .createAccount {
-        margin-top: 30%;
-        grid-column-start: 2;
-    }
-
-    .logo {
-        margin-top: 10%;
-        width: auto;
+        border-radius: 0px 20px 20px 0px;
+        background-color: rgb(54, 51, 52);
+        padding:30px;
     }
 
     .info {
@@ -363,98 +404,194 @@ body {
     .google {
         width: auto;
     }
-}
 
-/* css menu flotante */
+    .logoAccount {
+        margin-top: 30%;
+        grid-column-start:1;
+        border-radius: 20px 0px 0px 20px;
+        background-color: rgba(28, 25, 26, 1);
+    }
 
-.nav-bar {
-    background-color: sandybrown;
-    padding: 20px;
-    display: block;
-    color: seashell;
-    cursor: pointer;
-    font-size: 1.5em;
-    width: 110%;
-}
+    .second-page {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
 
-.menu, .submenu {
-    padding:0; 
-    margin: 0;
-}
+    #createAccount {
+        margin-top: 30%;
+        padding:20px;
+        border-radius: 0px 20px 20px 0px;
+        grid-column-start: 2;
+        background-color: rgb(54, 51, 52);
+    }
 
-.menu {
-    background-color:transparent;
-    width: 110%;
-    transition: all 0.5s;
-}
+    .logo {
+        margin-top: 10%;
+        width: auto;
+    }
+
+    .resetPasswordForm {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .container-logo {
+        margin-top: 20%;
+        grid-column-start: 1;
+        border-radius: 20px 0px 0px 20px;
+        background-color: rgba(28, 25, 26, 1);
+    }
+
+    .iconPassword {
+        padding-top: 20%;
+    }
+
+    
+    .container-password {
+        margin-top: 20%;
+        grid-column-start: 2;
+        border-radius: 0px 20px 20px 0px;
+        background-color: rgb(54, 51, 52);
+        padding: 12%;
+    }
+
+    .logo-timeLine {
+        width: 25%;
+        height: 25%;
+        margin-top: -15px;
+    }
+
+    #profilePhoto {
+        width: 90px;
+        height: 90px;
+        margin-top: 20px;
+
+    }
+
+    #profilePhoto:hover{
+        background-color: rgba(76, 138, 138, 1);
+    }
+
+
+    /* menu flotante */
 
 .menu-link {
     display: block;
     padding: 10px;
-    color: white;
-    font-size: 1.4em;
     cursor: pointer;
-}
-
-.menu-link:hover {
-    background: #444;
-}
-
-.submenu .menu-link:hover {
-    background: #222;
 }
 
 .submenu {
     position: absolute;
     height: 0;
     overflow: visible;
-    transition: all 0.3s;
-    visibility: hidden;
-}
+    transition: all 0.6s linear 0.4s;
+    display: none;
+} 
 
-.container-submenu:hover .submenu {
-    opacity: 1;
-    visibility: visible;
-    z-index: 1000;
+.submenu.show {
+    display: block;
 }
 
 .submenu .menu-link{
-    background-color:#333;
-    padding-left: 20;
+    background-color:rgb(129, 126, 126);
+    font-size: 1em;
+    font-family: 'arimo', sans-serif;
 }
 
-.showMenu {
-    margin-left: 0;
+.submenu .menu-link:hover{
+    background-color:rgba(76, 138, 138, 1);
+}
+.posts-container{
+    display: flex;
+    justify-content: center;
 }
 
-/* @media (min-width:1024px) {
-    .nav-bar {
-        display: none;
-    }
+#postContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    margin-top: 50px;
+    width: 650px;
+    margin-bottom: 80px;
+    /* margin-left: 150px; */
+}
+
+.allPost {
+    padding: 30px 40px 30px 40px;
+    margin-bottom: 40px;
+    width: 650px;
+}
+
+.reactions {
+    justify-content: left;
+}
+
+.img-comment {
+    width:7%;
+    height: 11%;
+    padding-top: 10px;
+}
+
+.btn-Edit, .btn-Delete,  .btn-save {
+    font-size: 14px;
+    margin-right: 10px;
+    height: 40px;
+}
+
+#headerTimeLine, .option-post {
+    background-color: rgba(28, 25, 26, 1);
+    padding:10px;
+    border-radius: 0px 0px 20px 20px;
+    margin-top: -5px;
+}
+
+#navUser {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(76, 138, 138, 1);
+    position: fixed;
+    width: 80px;
+    height: 375px;
+    left: 0px;
+    top: 230px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#closePost {
+    width: 4%;
+    height: 4%;
+    left: 400px;
+
+}
+
+.quarter-page {
+    padding-top: 3px;
+    padding-right: 20px;
+    /* background-color: rgb(54, 51, 52); */
+}
+
+.title-template{
+    font-size: 22px;
+}
+
+#userNav {
+    padding-right: 20px;
+}
+
+.input-post {
+    padding-top: 6%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
     
-    .menu {
-        display: flex;
-        flex-direction: column;
-        margin-left: 0;
-    }
+}
 
-    .container-submenu {
-        position: relative;
-    }
-
-    .submenu {
-        position: absolute;
-        top: 60px;
-        width: 200px;
-        overflow: visible;
-        z-index: 1000;
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    .container-submenu:hover .submenu {
-        opacity: 1;
-        visibility: visible;
-
-    }
+/* #description, #links {
+    width: 630px;
 } */
+
+
+}

@@ -16,28 +16,31 @@ import {
 
 import { app } from './firebaseConfig.js';
 
-// const analytics = getAnalytics(app);
 export const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 
-/* element profile user
+// obtener datos del usurario
 export const profileInit = (user) => {
+  // console.log(user)
   const userInfo = document.querySelector('#userInfo');
-  const userTitle = document.querySelector('#userTitle');
-  userInfo.innerHTML = `Hola ${user.displayName || 'Usuario'}
-  <img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >`;
-  userTitle.innerHTML = `<img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} >
-   ${user.displayName || 'Usuario'} `;
+  userInfo.innerHTML = `<img id= profilePhoto src=${user.photoURL || '../resources/logo.png'} > Hola ${user.displayName || 'Usuario'} `;
   window.location.hash = '#/timeLine';
+};
+
+// obtener información del usuario
+/* export const profileInit = async (userCredential) => {
+  const user = userCredential.displayName;
+  const photo = userCredential.photoURL;
+  timeLine(user, photo);
 }; */
 
-// registrar usuario
+// Registrar usuario
 export const userRegister = (email, password, name) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      console.log('usuario creado', user);
+      // console.log('usuario creado', user);
       updateProfile(auth.currentUser, {
         displayName: name,
       });
@@ -46,12 +49,12 @@ export const userRegister = (email, password, name) => {
       if (user != null) {
         sendEmailVerification(auth.currentUser)
           .then(() => {
-            console.log('correo enviado');
+            // console.log('correo enviado');
             alert('Hemos enviado un correo de verificación para validar tu cuenta.');
             window.location.hash = '#/login';
           })
           .catch((error) => {
-            console.log('Proceso no realizado', error);
+            // console.log('Proceso no realizado', error);
           });
       }
     })
@@ -60,11 +63,11 @@ export const userRegister = (email, password, name) => {
       const errorMessage = error.message;
       // ..
       alert(errorMessage);
-      console.log(errorCode + errorMessage);
+      // console.log(errorCode + errorMessage);
     });
 };
 
-// iniciar sesión con correo
+// Iniciar sesión con correo
 export const userLogin = (email1, password1) => {
   signInWithEmailAndPassword(auth, email1, password1)
     .then((userCredential) => {
@@ -72,8 +75,7 @@ export const userLogin = (email1, password1) => {
       const user = userCredential.user;
       if (user && user.emailVerified === true) {
         window.location.hash = '#/timeLine';
-      }
-      else {
+      } else {
         alert('Recuerda validar tu correo.');
         window.location.hash = '#/login';
       }
@@ -82,12 +84,12 @@ export const userLogin = (email1, password1) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorMessage);
-      console.log(errorCode + errorMessage);
+      // console.log(errorCode + errorMessage);
       window.location.hash = '#/login';
     });
 };
 
-// iniciar sesión con google
+// Iniciar sesión con google
 export const loginWithGoogle = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
@@ -110,6 +112,15 @@ export const loginWithGoogle = () => {
     });
 };
 
+// Cerrar sesión
+export const exit = () => {
+  signOut(auth).then(() => {
+    window.location.hash = '#/login';
+  }).catch((error) => {
+    alert(error);
+  });
+};
+
 //  Observador de estado de autentificación
 export const authChanged = () => {
   onAuthStateChanged(auth, (user) => {
@@ -118,18 +129,8 @@ export const authChanged = () => {
       // console.log('usuario logueado', user.displayName);
       profileInit(user);
     } else if (!user) {
-      if ( !['#/resetPassword', '#/account'].includes(window.location.hash)) window.location.hash = '#/login';
+      if (!['#/resetPassword', '#/account'].includes(window.location.hash)) window.location.hash = '#/login';
     }
-  });
-};
-
-// cerrar sesión
-export const exit = () => {
-  signOut(auth).then(() => {
-    window.location.hash = '#/login';
-    alert('Sesión cerrada con éxito, vuelve pronto');
-  }).catch((error) => {
-    alert(error);
   });
 };
 

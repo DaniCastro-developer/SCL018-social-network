@@ -3,25 +3,27 @@ import { createPost } from '../lib/firestore.js';
 
 export const post = () => {
   const thirdPage = document.createElement('div');
-  thirdPage.className = 'third-page';
-  thirdPage.id = 'thirdPage';
+  thirdPage.className = 'quarter-page';
+  thirdPage.id = 'quarterPage';
 
-  thirdPage.innerHTML = `<header> <img src='resources/logo.png' class='logo> 
-  <nav class= 'option-post'> 
-  <img src='resources/close.png' id='closePost'>
-  <span class = 'title-template'> <h1> Publicar </h1> </span>
+  thirdPage.innerHTML = `<header>  
+  <nav class= "option-post"> 
+  <img src="resources/close.png" id="closePost">
+  <span class = "title-template"> <h1> Crear publicación </h1> </span>
    </nav>
   </header>
-  <section class= 'post-template' id= 'post'>
-  <input type='text' id='artist' class = 'input' placeholder='Artista/s'/>
-        <input type='text' id='category' class = 'input'  placeholder='Categoría' />
-        <input type='date' id='date' class = 'input' placeholder='Fecha'/>
-        <input type='text' id='location' class = 'input' placeholder='Ubicación'/>
-        <input type='url' id='links' class = 'input' placeholder='Links de interés'/>
-        <input type='text' id='description' class = 'input' placeholder= 'Descripción'/>
+  <section class= "post-template" id= "post">
+  <div class= "input-post">
+  <input type="text" id="artist" class = "input" placeholder="Artista/s"/>
+        <input type="text" id="category" class = "input"  placeholder="Categoría" />
+        <input type="date" id="date" class = "input" placeholder="Fecha"/>
+        <input type="text" id="location" class = "input" placeholder="Ubicación"/>
+        <input type="url" id="links" class = "input" placeholder="Links de interes"/>
+        <input type="text" id="description" class = "input" placeholder= "Descripción del evento"/>
+ </div>
        
     
-      <button id = 'btnPost' class= 'button'> Publicar </button>
+      <button id = "btnPost" class= "button"> Publicar </button>
   </section>`;
 
   // publicar un post
@@ -33,8 +35,12 @@ export const post = () => {
     const descriptionValue = thirdPage.querySelector('#description').value;
     const urlValue = thirdPage.querySelector('#links').value;
     const locationValue = thirdPage.querySelector('#location').value;
-    createPost(artistValue, categoryValue, dateValue, descriptionValue, urlValue, locationValue);
-    window.location.hash = '#/timeLine';
+    if (artistValue === '' || categoryValue === '' || dateValue === '' || descriptionValue === '' || urlValue === '' || locationValue === '') {
+      alert('Recuerda llenar todos los campos');
+    } else {
+      createPost(artistValue, categoryValue, dateValue, descriptionValue, urlValue, locationValue);
+      window.location.hash = '#/timeLine';
+    }
   });
 
   // salir de la opción publicar
