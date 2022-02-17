@@ -23,7 +23,7 @@ const db = getFirestore(app);
 export const createPost = async (artistValue, categoryValue, dateValue, descriptionValue, urlValue, locationValue) => {
   try {
     // Add a new document with a generated id.
-    const docRef = await addDoc(collection(db, 'Post'), {
+    const docRef = await addDoc(collection(db, 'comanda'), {
       userName: auth.currentUser.displayName,
       photo: auth.currentUser.photoURL,
       userId: auth.currentUser.uid,

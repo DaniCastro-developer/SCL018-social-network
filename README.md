@@ -1,4 +1,4 @@
-<p align=center> <img src=src/resources/logo.png width= 200px> </p>
+<p aling= center> <img src=src/resources/logo.png width= 200px> </p>
 
 _______________
 # **Concert Date**
@@ -11,6 +11,9 @@ Esta red social está pensada y diseñada para amantes de la música que deseen 
 
 Descubre [Concert Date] en (https://danicastro-developer.github.io/SCL018-social-network/src/index.html#/login).
 
+Puedes utilizar el siguiente usuario para ingresar:
+* Correro: d.tcast@gmail.com
+* Contraseña: 12345678
 
 
 ### *Prototipos en papel*.
@@ -51,4 +54,4 @@ _____________________
 
 ## **Test de usabilidad.**
 
-Comming soon
+Se reunió a un grupo de personas para que probaran la aplicación y respondieran la siguiente encuesta https://forms.gle/apFjLKHo2HiQ6VkJ8 en donde evaluaran los pasos para ingresar a la página y su uso propiamente tal. Dentro del feedback recibido destacaron la usabilidad de la página, la cual es clara y rápida. Como elementos a mejorar está la parte de diseño como espacio para lo imput, tamaño de letra y colores con el fin de que la información sea más clara, además de agregar la opción de subir imágenes. 
